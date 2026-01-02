@@ -1,306 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Doog Gallery</title>
-  <style>
-    :root {
-      --bg-color: #2c2f33;
-      --container-bg: #23272a;
-      --text-color: #f6f6f6;
-      --highlight-color: #7289da;
-      --highlight-alt: #5865f2;
-      --link-color: #a0c4ff;
-      --link-hover-color: #88aaff;
-      --taskbar-bg: #23272a;
-      --taskbar-link-bg: #2c2f33;
-      --taskbar-link-hover-bg: #1e2124;
-      --taskbar-link-color: #7289da;
-      --taskbar-link-hover-color: #ffffff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Doog Gallery</title>
 
-    body.light {
-      --bg-color: #f6f6f6;
-      --container-bg: #ffffff;
-      --text-color: #2c2f33;
-      --highlight-color: #5865f2;
-      --highlight-alt: #7289da;
-      --link-color: #4169e1;
-      --link-hover-color: #1e40af;
-      --taskbar-bg: #e1e5ea;
-      --taskbar-link-bg: #d1d5db;
-      --taskbar-link-hover-bg: #a8b1c2;
-      --taskbar-link-color: #4169e1;
-      --taskbar-link-hover-color: #1e40af;
-    }
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --accentGlow: rgba(99,102,241,0.6);
+  --card: rgba(255,255,255,0.06);
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+body.light {
+  --bg: #f5f7ff;
+  --text: #1f1f1f;
+  --accent1: #4169e1;
+  --accent2: #1e40af;
+  --accentGlow: rgba(65,105,225,0.4);
+  --card: rgba(255,255,255,0.85);
+}
 
-    .taskbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: var(--taskbar-bg);
-      padding: 10px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  transition: 0.3s;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
+.topbar {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 50;
+}
 
-    .right-buttons {
-      position: fixed;
-      top: 10px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-    }
+.topbar button {
+  background: var(--accent1);
+  border: none;
+  padding: 9px 14px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accentGlow);
+  transition: 0.25s;
+}
 
-    .taskbar a,
-    .taskbar button {
-      padding: 10px 15px;
-      background-color: var(--taskbar-link-bg);
-      color: var(--taskbar-link-color);
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      font-size: 1em;
-    }
+.topbar button:hover {
+  background: var(--accent2);
+  transform: scale(1.07);
+}
 
-    .taskbar a:hover,
-    .taskbar button:hover {
-      background-color: var(--taskbar-link-hover-bg);
-      color: var(--taskbar-link-hover-color);
-    }
+.hero {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
+  border-radius: 0 0 35px 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 
-    .container {
-      padding: 80px 20px 20px 20px;
-      text-align: center;
-      max-width: 1200px;
-      width: 100%;
-      background: var(--container-bg);
-      transition: background-color 0.3s ease;
-    }
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
-    h1 {
-      color: var(--highlight-color);
-      margin-bottom: 10px;
-    }
+.hero p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 1.2rem;
+}
 
-    .intro-text {
-      color: var(--text-color);
-      font-size: 1.1em;
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
 
-    .search-bar input {
-      padding: 15px;
-      width: 350px;
-      font-size: 1.1em;
-      border-radius: 5px;
-      border: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      margin-bottom: 30px;
-    }
+.search input {
+  width: 340px;
+  padding: 14px;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  margin-bottom: 30px;
+}
 
-    .photo-thumbnails {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
+.thumbs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
 
-    .thumbnail {
-      width: 150px;
-      height: 150px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
+.thumb {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
+  transition: 0.25s;
+}
 
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.thumb:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--accentGlow);
+}
 
-    .photo-display {
-      text-align: center;
-    }
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .photo-display h2 {
-      color: var(--highlight-alt);
-      margin-top: 20px;
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
+.photo-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--accent1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  margin-top: 30px;
+}
 
-    .photo-display p {
-      color: var(--text-color);
-      font-size: 1em;
-      margin-top: 5px;
-    }
+.photo-card img {
+  max-width: 100%;
+  max-height: 600px;
+  border-radius: 14px;
+  margin: 15px 0;
+}
 
-    .photo-display img {
-      max-width: 100%;
-      max-height: 600px;
-      border-radius: 10px;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .error {
-      color: #ff7070;
-      margin-top: 20px;
-    }
-  </style>
+.error {
+  color: #ff6b6b;
+  margin-top: 15px;
+}
+</style>
 </head>
+
 <body>
-  <div class="taskbar">
-    <div class="nav-links">
-      <a href="index.html" data-key="home">Home</a>
-      <a href="Changelog.html" data-key="changelog">Changelog</a>
-      <a href="Doog.html" data-key="doog">The Doog</a>
-      <a href="puggyrealm.html" data-key="realm">Puggy Realm</a>
-      <a href="Puggy.html" data-key="bot">Puggy Bot</a>
-    </div>
-    <div class="right-buttons">
-      <button id="lang-toggle">ES</button>
-      <button id="mode-toggle">ðŸŒ™</button>
-    </div>
+
+<div class="topbar">
+  <button id="lang">ES</button>
+  <button id="mode">🌙</button>
+</div>
+
+<div class="hero">
+  <h1 data-k="title">The Doog Gallery</h1>
+  <p data-k="desc">Browse, search, and admire legendary Doog moments.</p>
+</div>
+
+<div class="container">
+
+  <div class="search">
+    <input id="photoInput" placeholder="Enter Doog photo number..." onkeydown="if(event.key==='Enter') loadPhoto()">
   </div>
 
-  <div class="container">
-    <h1 data-key="title">The Doog Gallery</h1>
-    <p class="intro-text" data-key="intro">Welcome to The Doog's Photo Gallery! Here, you can explore and search through a collection of Doog photos from various moments. Just enter the number of the photo you're looking for!</p>
-
-    <div class="search-bar">
-      <input type="text" id="photoNumberInput" placeholder="Enter Doog photo number (e.g., 1, 15)" onkeypress="handleKey(event)">
-    </div>
-
-    <div class="photo-thumbnails">
-      <div class="thumbnail"><img src="DOOGS/1.jpg" alt="Doog 1"></div>
-      <div class="thumbnail"><img src="DOOGS/26.jpg" alt="Doog 2"></div>
-      <div class="thumbnail"><img src="DOOGS/36.jpg" alt="Doog 3"></div>
-      <div class="thumbnail"><img src="DOOGS/41.jpg" alt="Doog 4"></div>
-      <div class="thumbnail"><img src="DOOGS/54.jpg" alt="Doog 5"></div>
-    </div>
-
-    <div id="photoContainer" class="photo-display"></div>
-    <div id="errorMessage" class="error"></div>
+  <div class="thumbs">
+    <div class="thumb" onclick="quickLoad(1)"><img src="DOOGS/1.jpg"></div>
+    <div class="thumb" onclick="quickLoad(26)"><img src="DOOGS/26.jpg"></div>
+    <div class="thumb" onclick="quickLoad(36)"><img src="DOOGS/36.jpg"></div>
+    <div class="thumb" onclick="quickLoad(41)"><img src="DOOGS/41.jpg"></div>
+    <div class="thumb" onclick="quickLoad(54)"><img src="DOOGS/54.jpg"></div>
   </div>
 
-  <script src="DoogDescriptions.js"></script>
-  <script src="index.js"></script>
-  <script>
-    const translations = {
-      es: {
-        home: "Inicio",
-        changelog: "Cambios",
-        doog: "El Doog",
-        realm: "Reino Puggy",
-        bot: "Bot Puggy",
-        title: "GalerÃ­a del Doog",
-        intro: "Â¡Bienvenido a la GalerÃ­a de Fotos del Doog! AquÃ­ puedes explorar y buscar fotos del Doog de varios momentos. Â¡Solo ingresa el nÃºmero de la foto que buscas!"
-      },
-      en: {}
-    };
+  <div id="photo"></div>
+  <div id="error" class="error"></div>
 
-    let currentLang = 'en';
-    const langToggleBtn = document.getElementById('lang-toggle');
-    const modeToggleBtn = document.getElementById('mode-toggle');
+</div>
 
-    function translatePage(lang) {
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-    }
+<script src="DoogDescriptions.js"></script>
+<script>
+const modeBtn = document.getElementById("mode");
+const savedMode = localStorage.getItem("site-mode");
+if (savedMode === "light") document.body.classList.add("light");
+modeBtn.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 
-    langToggleBtn.addEventListener('click', () => {
-      if (currentLang === 'en') {
-        currentLang = 'es';
-        langToggleBtn.textContent = 'EN';
-        translatePage('es');
-        if (document.body.classList.contains('light')) {
-          document.body.classList.remove('light');
-          modeToggleBtn.textContent = 'ðŸŒ™';
-        }
-      } else {
-        currentLang = 'en';
-        langToggleBtn.textContent = 'ES';
-        location.reload();
-      }
-    });
+modeBtn.onclick = () => {
+  document.body.classList.toggle("light");
+  const m = document.body.classList.contains("light") ? "light" : "dark";
+  localStorage.setItem("site-mode", m);
+  modeBtn.textContent = m === "light" ? "☀️" : "🌙";
+};
 
-    function handleKey(event) {
-      if (event.key === 'Enter') {
-        loadDoogPhoto();
-      }
-    }
+const translations = {
+  es: {
+    title: "Galería del Doog",
+    desc: "Explora, busca y admira momentos legendarios del Doog."
+  },
+  en: {}
+};
 
-    function loadDoogPhoto() {
-      const photoNumber = document.getElementById("photoNumberInput").value.trim();
-      const photoContainer = document.getElementById("photoContainer");
-      const errorMessage = document.getElementById("errorMessage");
-      photoContainer.innerHTML = "";
-      errorMessage.textContent = "";
+let lang = localStorage.getItem("site-lang") || "en";
+document.getElementById("lang").textContent = lang === "en" ? "ES" : "EN";
 
-      if (!photoNumber || isNaN(photoNumber)) {
-        errorMessage.textContent = "Please enter a valid number.";
-        return;
-      }
+function translate() {
+  document.querySelectorAll("[data-k]").forEach(el => {
+    const k = el.dataset.k;
+    if (translations[lang]?.[k]) el.textContent = translations[lang][k];
+  });
+}
+translate();
 
-      const jpgPath = `DOOGS/${photoNumber}.jpg`;
-      const pngPath = `DOOGS/${photoNumber}.png`;
+document.getElementById("lang").onclick = () => {
+  lang = lang === "en" ? "es" : "en";
+  localStorage.setItem("site-lang", lang);
+  document.getElementById("lang").textContent = lang === "en" ? "ES" : "EN";
+  translate();
+};
 
-      const img = new Image();
-      img.onload = () => displayPhoto(img.src, photoNumber);
-      img.onerror = () => {
-        const fallbackImg = new Image();
-        fallbackImg.onload = () => displayPhoto(fallbackImg.src, photoNumber);
-        fallbackImg.onerror = () => {
-          errorMessage.textContent = `Doog photo ${photoNumber} not found.`;
-        };
-        fallbackImg.src = pngPath;
-      };
-      img.src = jpgPath;
-    }
+function quickLoad(n) {
+  document.getElementById("photoInput").value = n;
+  loadPhoto();
+}
 
-    function displayPhoto(src, number) {
-      const photoContainer = document.getElementById("photoContainer");
-      const info = doogDescriptions[number] || {};
-      const title = info.title || `Photo ${number}`;
-      const desc = info.desc || '';
+function loadPhoto() {
+  const num = document.getElementById("photoInput").value.trim();
+  const out = document.getElementById("photo");
+  const err = document.getElementById("error");
+  out.innerHTML = "";
+  err.textContent = "";
 
-      photoContainer.innerHTML = `
-        <h2>${title}</h2>
-        <img src="${src}" alt="${title}">
-        <p>${desc}</p>
-      `;
-    }
-  </script>
+  if (!num || isNaN(num)) {
+    err.textContent = "Enter a valid photo number.";
+    return;
+  }
+
+  const img = new Image();
+  img.onload = () => render(img.src, num);
+  img.onerror = () => err.textContent = `Doog photo ${num} not found.`;
+  img.src = `DOOGS/${num}.jpg`;
+}
+
+function render(src, num) {
+  const info = doogDescriptions[num] || {};
+  document.getElementById("photo").innerHTML = `
+    <div class="photo-card">
+      <h2>${info.title || `Photo ${num}`}</h2>
+      <img src="${src}">
+      <p>${info.desc || ""}</p>
+    </div>
+  `;
+}
+</script>
+
 </body>
 </html>
