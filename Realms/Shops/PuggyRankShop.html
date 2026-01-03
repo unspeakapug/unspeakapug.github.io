@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - Rank Shop</title>
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Taskbar */
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Title & intro */
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+.container p {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Section title */
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--accent1);
+  margin-bottom: 15px;
+}
+
+/* Info boxes / lists */
+.info-box {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent2);
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: 0.3s;
+}
+.info-box:hover {
+  background: var(--card-hover);
+}
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+li {
+  margin: 8px 0;
+  font-size: 1.05rem;
+}
+li strong {
+  color: var(--accent1);
+}
+li a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+li a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="taskbar">
+  <a href="../../index.html">Home</a>
+  <a href="Changelog.html">Changelogs</a>
+  <a href="../../General/Doog.html">The Doog</a>
+  <a href="../../General/puggyrealm.html">Puggy Realm</a>
+  <a href="../../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+  <h1>Puggy Realm Rank Shop</h1>
+  <p>
+    Welcome to the Rank Shop! Here you can find a list of all ranks available for purchase in the Puggy Realm. Some of these are purely cosmetic meaning they give no additional features, others do give other features. Some ranks are important for your progression on the Realm.
+  </p>
+
+  <div class="info-box">
+    <h2 class="section-title">Pure cosmetic/Collectors ranks</h2>
+    <ul>
+      <li><strong>Cat:</strong> Price: $29,300</li>
+      <li><strong>Boss Baby:</strong> Price: $99,377</li>
+      <li><strong>Pancake Mix:</strong> Price: $10,000</li>
+      <li><strong>Bread:</strong> Price: $15,000</li>
+      <li><strong>Chicken Nugget:</strong> Price: $1,000,000</li>
+      <li><strong>Numn Nut:</strong> Price: $100,000,000</li>
+      <li><strong>Habeeb Habob:</strong> Price: $100,000</li>
+      <li><strong>LEEE MEEE LONNNNNNEEEE:</strong> Price: $9,999,000</li>
+      <li><strong>Roach:</strong> Price: $10,000</li>
+      <li><strong>Official Pug:</strong> Price: $1,000,000</li>
+      <li><strong>Cool:</strong> Price: $10,000</li>
+      <li><strong>Noah:</strong> Price: $10,000</li>
+    </ul>
+  </div>
+
+  <div class="info-box">
+    <h2 class="section-title">Ranks with additional features</h2>
+    <ul>
+      <li><strong>Cheese:</strong> Price: $100,000 | Allows access to the Cheese Rank Area.</li>
+      <li><strong>Deepslate Inversion:</strong> Price: $5,000,000 | Allows access to the deepslate inversion rank area.</li>
+      <li><strong>Frog:</strong> Price: $10,000 | Allows access to the frog rank area.</li>
+      <li><strong>Eeper:</strong> Price: $25,700 | Allows access to the eeper rank area.</li>
+      <li><strong>Apple:</strong> Price: $57,000 | Allows useage of the !apple command.</li>
+      <li><strong>Nothing:</strong> Price: $5,000,000 | Allows useage of a secret command.</li>
+    </ul>
+  </div>
+
+  <div class="info-box">
+    <h2 class="section-title">Important Ranks</h2>
+    <ul>
+      <li><strong>VIP:</strong> Price: $700,000 | Allows access to the <a href="RealmVipZone.html">VIP area</a>, exclusive plot rewards, and other small things.</li>
+      <li><strong>MVP:</strong> Price: $1,500,000 | Allows access to the <a href="RealmMvpZone.html">MVP area</a>.</li>
+      <li><strong>MVP+:</strong> Price: $25,000,000 | Allows access to the <a href="RealmMvp+Zone.html">MVP+ area</a>.</li>
+      <li><strong>MVP++:</strong> Price: $120,000,000 | Allows access to the <a href="RealmMvp++Zone.html">MVP++ area</a>.</li>
+      <li><strong>PIG+:</strong> Price: $500,000,000 | Allows access to the <a href="RealmPig+Zone.html">PIG+ area</a>.</li>
+      <li><strong>VIP+:</strong> Price: $1,000,000,000 + 5,000 minutes played | Allows access to the <a href="RealmVip+Zone.html">VIP+ area</a>.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

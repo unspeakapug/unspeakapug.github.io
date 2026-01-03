@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Bot</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.title-row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.bot-status {
+  position: absolute;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  top: 32px;          
+  left: 50%;
+  transform: translateX(180px);
+  opacity: 0.9;
+}
+
+.bot-status div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: gray;
+}
+
+.dot.online {
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.8);
+}
+
+.dot.offline {
+  background: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.7);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: var(--accent1);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.features-list li {
+  background: rgba(99,102,241,0.05);
+  border-left: 4px solid var(--accent2);
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: background 0.3s;
+}
+
+.features-list li:hover {
+  background: rgba(99,102,241,0.1);
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-grid li {
+  background: rgba(99,102,241,0.05);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid var(--accent1);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.links-grid li:hover {
+  background: rgba(99,102,241,0.1);
+  border-color: var(--accent2);
+}
+
+.links-grid li a {
+  font-weight: bold;
+  color: var(--accent1);
+  font-size: 1.05rem;
+  display: block;
+  transition: color 0.3s;
+}
+
+.links-grid li a:hover {
+  color: var(--accent2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="taskbar">
+  <a href="../index.html">Home</a>
+  <a href="Changelog.html">Changelogs</a>
+  <a href="Doog.html">The Doog</a>
+  <a href="puggyrealm.html">Puggy Realm</a>
+  <a href="Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+  <div class="title-row">
+    <h1>Puggy Bot</h1>
+
+    <div class="bot-status">
+        <div><span class="dot online"></span> Discord Bot — Online</div>
+        <div><span class="dot online"></span> Realm Bot — Online</div>
+        <div><span class="dot online"></span> Beta Bot — Online</div>
+    </div>
+</div>  
+  <p class="page-desc">The Puggy Bot is a Discord bot designed to make your experience better. Its features range from fun to utility, making it useful for even more people. Theres also a Beta Bot with features that aren't ready to be added to the primary bot yet.</p>
+  <p class="page-desc">Notes: Some features require specific permissions in your Discord server or Minecraft Realm. If the permissions aren't given the bot will not function as intended. Another additional note, if the bot Terms of Service is broken you could be blacklisted. This means you will be unable to use the bot.</p>
+
+  <div class="features">
+    <h2 class="section-title">Main Features</h2>
+    <ul class="features-list">
+      <li>/Doog, /Doogbomb, and /Doogquote — commands related to <a href="Doog.html">The Doog</a></li>
+      <li>Pug Points and scoreboard/leaderboard features to compete with others</li>
+      <li>/rewards, /buildings, and /boost — commands providing even more Pug Points to speed up progression</li>
+      <li>/chatbot — a Minecraft Realm to Discord server relay</li>
+      <li>/xtictactoe and /xblackhack — game style commands that give rewards </li>
+    </ul>
+  </div>
+
+  <div class="links">
+    <h2 class="section-title">Explore More</h2>
+    <ul class="links-grid">
+      <li><a href="Commands.html">Commands</a></li>
+      <li><a href="External_Commands.html">External Commands</a></li>
+      <li><a href="Puggy_Realm_Commands.html">Realm Commands</a></li>
+      <li><a href="PuggyTOS.html">Terms of Service</a></li>
+      <li><a href="PuggyPrivacyPolicy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

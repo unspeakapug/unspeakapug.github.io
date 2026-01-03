@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lrtlgamer - Staff Profile</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.main-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 120px auto 50px;
+  gap: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex: 0 0 280px;
+  background: #1c1d28;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+.sidebar h3 { color: var(--accent1); margin-bottom: 15px; }
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar li { margin-bottom: 10px; }
+.sidebar a { color: var(--text); }
+.sidebar a:hover { color: var(--accent1); }
+
+.profile-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--accent2);
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.profile-rank {
+  font-size: 1rem;
+  color: var(--accent1);
+  margin-top: 4px;
+}
+
+.profile-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: 0.3s;
+}
+.profile-card:hover {
+  background: var(--card-hover);
+}
+
+.profile-card h3 {
+  color: var(--accent1);
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(99,102,241,0.2);
+  transition: 0.3s;
+}
+.links a:hover {
+  background: var(--accent1);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .sidebar { width: 100%; }
+}
+
+.favorite-songs {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #c7c9ff;
+}
+
+.favorite-songs span {
+  display: block;
+  opacity: 0.9;
+}
+
+</style>
+</head>
+<body>
+
+<div class="taskbar">
+  <a href="../index.html">Home</a>
+  <a href="../General/Changelog.html">Changelogs</a>
+  <a href="../General/Doog.html">The Doog</a>
+  <a href="../General/puggyrealm.html">Puggy Realm</a>
+  <a href="../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="main-content">
+  <div class="sidebar">
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#important-info">Important Info</a></li>
+      <li><a href="#links">Links</a></li>
+    </ul>
+  </div>
+
+  <div class="profile-section">
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="Lrtlgamer.webp" alt="Lrtlgamer">
+      </div>
+      <div>
+        <h2>Lrtlgamer</h2>
+        <div class="profile-rank">Moderator and Builder</div>
+
+        <div class="favorite-songs">
+            <span>🎵 Capo — NLE Choppa</span>
+            <span>🎵 23 — Chayce Beckham</span>
+            <span>🎵 Dear Mama — 2Pac</span>
+            <span>🎵 Let It All Work Out — Lil Wayne</span>
+        </div>
+        </div>
+    </div>
+
+    <div class="profile-card" id="bio">
+      <h3>Bio</h3>
+      <p>Hello! Im Snuggo, Not to be confused with Puggo I joined Puggy Realm in 2022 and have mainly been used as a test subject until early 2025 when i became Puggo's right hand man and really started pouring my life into this Realm, I am now quickly ranking up thru Staff ranks!</p>
+    </div>
+
+    <div class="profile-card" id="important-info">
+    <b>
+      <h3>Important Info</h3>
+      <p>Pronouns: he/him</p>
+      <p>Nationality: American</p>
+      <p>Discord: Lrtlgamer (id: 1235308768821117048)</p>
+      <p>Minecraft: Lrtlgamer</p>
+    </b>
+    </div>
+
+    <div class="profile-card links" id="links">
+      <h3>Links</h3>
+      <a href="https://www.youtube.com/channel/UCh35YSnIJLJiN1sAzGPQ2Ew" target="_blank">YouTube</a>
+      <a href="https://www.twitch.tv/landothon" target="_blank">Twitch</a>
+      <a href="https://www.tiktok.com/@landonotchat" target="_blank">TikTok</a>
+      <a href="https://steamcommunity.com/profiles/76561199811779283" target="_blank">Steam</a>
+      <a href="https://open.spotify.com/user/31t7kyczelacojizduqzuyqkfdaa" target="_blank">Spotify</a>
+      <a href="https://roblox.com/users/343334939/profile" target="_blank">Roblox</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
