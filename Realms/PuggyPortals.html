@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - Portals</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+  --badge-bg: #ff5c5c;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: var(--accent1);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.features-list li {
+  position: relative; /* For badges */
+  background: var(--card);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid var(--accent1);
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.features-list li:hover {
+  background: var(--card-hover);
+  border-color: var(--accent2);
+  transform: scale(1.03);
+}
+
+.features-list li h3 {
+  color: var(--accent1);
+  margin-bottom: 10px;
+}
+
+.features-list li p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 4px;
+  background: #ff5c5c;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  transform: rotate(15deg) skew(10deg, 5deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  font-family: 'Segoe UI', sans-serif;
+}
+</style>
+</head>
+<body>
+
+<div class="taskbar">
+  <a href="index.html">Home</a>
+  <a href="Changelog.html">Changelogs</a>
+  <a href="Doog.html">The Doog</a>
+  <a href="puggyrealm.html">Puggy Realm</a>
+  <a href="Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+  <h1>Realm Portals</h1>
+  <p class="page-desc">
+    Explore the various portals in the Puggy Realm hub! Each portal leads to a unique area with its own features.
+  </p>
+
+  <div class="main-features">
+    <h2 class="section-title">Main Portals</h2>
+    <ul class="features-list">
+      <li>
+        <h3>Shops</h3>
+        <p>Sell ores and purchase hundreds of items from kits to mayflies and ranks!</p>
+      </li>
+      <li>
+        <h3>Misc Areas</h3>
+        <p>Explore a variety of smaller areas without their own portal.</p>
+      </li>
+      <li>
+        <h3>Plots</h3>
+        <p>Explore peoples builds and homes. Purchase a plot in the <a href="Shops/PuggyNormalShop.html">Normal Shop</a>!</p>
+      </li>
+      <li>
+        <h3>Private Smelters</h3>
+        <p>Small rooms with furnaces, crafting tables, and kit access without risking items being taken by others.</p>
+      </li>
+      <li>
+        <h3>Rank Areas</h3>
+        <p>Access special areas requiring ranks with exclusive items.</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="smaller-features">
+    <h2 class="section-title">Smaller Portals</h2>
+    <ul class="features-list">
+      <li>
+        <h3>Chill Area</h3>
+        <p>A floating island connected to spawn used to relax and hang out with other players.</p>
+      </li>
+      <li>
+        <h3>Library</h3>
+        <p>View a variety of books written by members/staff and apply your book to be added as well!</p>
+      </li>
+      <li>
+        <h3>PvP Arena <span class="badge">Redesigned</span></h3>
+        <p>PvP against other players in a specially designed arena!</p>
+      </li>
+      <li>
+        <h3>Mob Arena</h3>
+        <p>Fight mobs and collect their drops.</p>
+      </li>
+      <li>
+        <h3>Puggy SMP <span class="badge">New Map</span></h3>
+        <p>Explore a survival-style SMP world and build freely.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
