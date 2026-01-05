@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - VIP+ Rank Area</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.section-title {
+  color: var(--accent1);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.screenshot {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.screenshot img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--accent1);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.features-list li {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--accent1);
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.features-list li:hover {
+  background: var(--card-hover);
+  border-color: var(--accent2);
+  transform: translateY(-4px);
+}
+
+.features-list li h3 {
+  color: var(--accent1);
+  margin-bottom: 8px;
+}
+
+.features-list li p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.obtain {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="taskbar">
+  <a href="../../index.html">Home</a>
+  <a href="Changelog.html">Changelogs</a>
+  <a href="../../General/Doog.html">The Doog</a>
+  <a href="../../General/puggyrealm.html">Puggy Realm</a>
+  <a href="../../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+  <h1>VIP+ Rank Area</h1>
+  <p class="page-desc">
+    VIP+ is the second smallest rank area while still letting you unlock experimental features, new/powerful generators, and unique blocks not available anywhere else.
+  </p>
+
+  <div class="screenshot">
+    <h2 class="section-title">VIP+ Zone Preview</h2>
+    <img src="PuggyVip+Image.png" alt="VIP+ Rank Area Screenshot">
+  </div>
+
+  <h2 class="section-title">What’s Inside?</h2>
+  <ul class="features-list">
+    <li>
+      <h3>Unknown Element Gen & Seller</h3>
+      <p>
+        Access the exclusive Unknown Element gen and seller.
+        Each sells for <strong>$5,000</strong>.
+      </p>
+    </li>
+
+    <li>
+      <h3>Kit Duper & Infinite Animals</h3>
+      <p>
+        Use the kit duper alongside a regenerating kit filled with mob spawn eggs you cannot get anywhere else.
+      </p>
+    </li>
+
+    <li>
+      <h3>VIP++ and experimental features</h3>
+      <p>
+        Access to VIP++ (You still must have the role) and future experimental features as they are released.
+      </p>
+    </li>
+  </ul>
+
+  <div class="obtain">
+    <h2 class="section-title">How to Obtain VIP+</h2>
+    <p>
+      VIP+ can be purchased in the <a href="../Shops/PuggyRankShop.html">Rank Shop</a>.
+      The entrance is located inside the <a href="PuggyRealmMVP++.html">MVP++ Zone</a>.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - Plots</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.section-title {
+  color: var(--accent1);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+.list {
+  background: var(--card);
+  border: 1px solid var(--accent1);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+.list:hover {
+  background: var(--card-hover);
+  border-color: var(--accent2);
+  transform: translateY(-4px);
+}
+.list strong {
+  color: var(--accent1);
+}
+.list p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.portal-card {
+  background: var(--card);
+  border: 1px solid var(--accent1);
+  border-radius: 12px;
+  padding: 25px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+.portal-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--card-hover);
+  border-color: var(--accent2);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.45);
+}
+
+.portal-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: var(--accent1);
+}
+
+.portal-card p {
+  margin: 0;
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #dcdcdc;
+}
+</style>
+</head>
+<body>
+
+<div class="taskbar">
+    <a href="../index.html">Home</a>
+    <a href="Changelog.html">Changelogs</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+    <h1>Puggy Realm Plots</h1>
+    <p class="page-desc">Learn everything about plots and what you can do with them.</p>
+
+    <div class="section">
+        <h2 class="section-title">What Are Plots?</h2>
+        <div class="list">
+            <strong>Free Build Areas:</strong>
+            <p>
+                Plots are free 64×64 areas of land where you can build anything you want.
+                You can claim a plot by pressing the <strong>"Want a plot"</strong> button in the plot area
+                or by asking in the Discord server.
+            </p>
+            <p>
+                Note: Specially named plots are a plot upgrade in the normal shop. A green color comes along with it for your sign.
+            </p>
+        </div>
+        <div class="list">
+            <strong>Security System:</strong>
+            <p>
+                Each plot teleports unauthorized users back to the hub automatically.
+            </p>
+        </div>
+        <div class="list">
+            <strong>Sharing Access:</strong>
+            <p>
+                Give others access using <strong>!shareplot</strong> and remove with <strong>!removeplotaccess</strong>.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Rank Plot Buffs</h2>
+        <div class="list">
+            <strong>Staff</strong>
+            <p>
+                Staff members can claim infinite plots and build freely, including using creative mode.
+            </p>
+        </div>
+        <div class="list">
+            <strong>Vip+</strong>
+            <p>
+                Vip+ rank gives free plot upgrades, a mailbox, half-size basement, carpet on border blocks, and a purple TP sign color.
+            </p>
+        </div>
+    </div>
+
+    <div class="portal-grid">
+        <a class="portal-card">
+            <h2>Clan Plots</h2>
+            <p>
+                Clan plots come with a free clan name and can be accessed by all clan members. Clan members can upgrade the plot and have a carpet cover over border blocks for decoration.
+            </p>
+        </a>
+
+        <a class="portal-card">
+            <h2>2x & 4x Plots</h2>
+            <p>
+                Expanded plots: 2x (128x128) and 4x (256x256). Upgrades available in the normal shop.
+            </p>
+        </a>
+
+        <a class="portal-card">
+            <h2>Opened / Shop Plots</h2>
+            <p>
+                Accessible to all players, typically used for shops or showcases.
+            </p>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

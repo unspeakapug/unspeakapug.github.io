@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - PIG+ Rank Area</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.section-title {
+  color: var(--accent1);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.screenshot {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.screenshot img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--accent1);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.features-list li {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--accent1);
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.features-list li:hover {
+  background: var(--card-hover);
+  border-color: var(--accent2);
+  transform: translateY(-4px);
+}
+
+.features-list li h3 {
+  color: var(--accent1);
+  margin-bottom: 8px;
+}
+
+.features-list li p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.obtain {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="taskbar">
+  <a href="../../index.html">Home</a>
+  <a href="Changelog.html">Changelogs</a>
+  <a href="../../General/Doog.html">The Doog</a>
+  <a href="../../General/puggyrealm.html">Puggy Realm</a>
+  <a href="../../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+  <h1>PIG+ Rank Area</h1>
+  <p class="page-desc">
+    Pig+ is the biggest and most providing rank area in the Puggy Realm. It includes more features than all other rank areas, making it completely worth purchasing!
+  </p>
+
+  <div class="screenshot">
+    <h2 class="section-title">PIG+ Zone Preview</h2>
+    <img src="PuggyPig+Image.png" alt="Screenshot of the PIG+ Zone">
+  </div>
+
+  <h2 class="section-title">What's Inside?</h2>
+  <ul class="features-list">
+    <li>
+      <h3>Exclusive Kits & Generators</h3>
+      <p>
+        Access the element 118 (Oganesson) generator, along with a kit gen with 9 random kits, a gen with water and lava, and a few more!
+      </p>
+    </li>
+
+    <li>
+      <h3>Infinite Pigs & Race Track</h3>
+      <p>
+        This place has an infinite pig spawner for both Cold and Warm pigs along with doubling as a pig racetrack to play with your friends. It can also be used as a PVP Arena with its huge size.
+      </p>
+    </li>
+
+    <li>
+      <h3>Ultimate Kits</h3>
+      <p>
+        Down in the crator in the middle there is a room with exclusive kits which are better versions of God Kits called Ultimate Kits. There are versions of many kits including non-god kits which are also qualified as Ultimate Kits.
+      </p>
+    </li>
+
+    <li>
+      <h3>Much more</h3>
+      <p>
+        There are even more features here that aren't listed in this page. Explore the area in game to find out what the rest are!
+      </p>
+    </li>
+  </ul>
+
+  <div class="obtain">
+    <h2 class="section-title">How to Obtain PIG+</h2>
+    <p>
+      PIG+ can be purchased in the <a href="../Shops/PuggyRankShop.html">Rank Shop</a>.
+      The entrance is located in the <a href="PuggyRealmMVP++.html">MVP++ Zone</a>.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

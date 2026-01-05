@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - Library</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
+
+  --cat-tutorials: #10b981;
+  --cat-history: #f59e0b;
+  --cat-fantasy: #8b5cf6;
+  --cat-player: #f43f5e;
+  --cat-othergames: #3b82f6;
+  --cat-pugsjourney: #ec4899;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.section-title {
+  color: var(--accent1);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.screenshot-card {
+  background: var(--card);
+  border: 1px solid var(--accent1);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.screenshot-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--card-hover);
+  border-color: var(--accent2);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.45);
+}
+
+.screenshot-card img {
+  width: 100%;
+  display: block;
+}
+
+.screenshot-card h3 {
+  margin: 12px 0;
+  color: var(--accent1);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.book-card {
+  background: var(--card);
+  border: 1px solid var(--accent1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--card-hover);
+  border-color: var(--accent2);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.45);
+}
+
+.book-category {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.cat-tutorials { background-color: var(--cat-tutorials); }
+.cat-history { background-color: var(--cat-history); }
+.cat-fantasy { background-color: var(--cat-fantasy); }
+.cat-player { background-color: var(--cat-player); }
+.cat-othergames { background-color: var(--cat-othergames); }
+.cat-pugsjourney { background-color: var(--cat-pugsjourney); }
+
+.book-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--accent1);
+}
+
+.book-card p {
+  margin: 4px 0;
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+</style>
+</head>
+<body>
+
+<div class="taskbar">
+    <a href="../index.html">Home</a>
+    <a href="Changelog.html">Changelogs</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+    <h1>Realm Library</h1>
+    <p class="page-desc">
+        Welcome to the Puggy Realm Library! Explore books written by players and staff covering realm lore, guides, and fun stories.
+    </p>
+
+    <div class="screenshots">
+        <div class="screenshot-card">
+            <img src="PuggyLibraryE.png" alt="Library Exterior">
+            <h3>Library Exterior</h3>
+        </div>
+        <div class="screenshot-card">
+            <img src="PuggyLibraryI.png" alt="Library Interior">
+            <h3>Library Interior</h3>
+        </div>
+    </div>
+
+    <section>
+        <h2 class="section-title">Library Book List</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Trading</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains the trading system in Minecraft.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Jukebox/Noteblocks</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains jukeboxes and noteblocks.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Gamemodes</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains Minecraft gamemodes.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-othergames">Tutorials & Info</div>
+                <h3>Minecraft Games</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains Minecraft spinoff games and main game itself</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Passive Mobs 1</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains passive mobs in Minecraft.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Potions/Brewing</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains brewing and potion effects.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Bedrock Unused</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Covers unused items in Minecraft Bedrock.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Armor Trims</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Explains armor trims and mechanics in Minecraft.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-tutorials">Tutorials & Info</div>
+                <h3>Piglins</h3>
+                <p><strong>Author:</strong> SeniorFir270 & Bustiehund</p>
+                <p><strong>Description:</strong> Explains Piglins and everything about them.</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-history">Realm History</div>
+                <h3>NPPP</h3>
+                <p><strong>Author:</strong> SeniorFir270 & Meta4167</p>
+                <p><strong>Description:</strong> Explains everything about the No Pants People Party clan</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-history">Realm History</div>
+                <h3>Skygen Season 1</h3>
+                <p><strong>Author:</strong> SeniorFir270</p>
+                <p><strong>Description:</strong> Explains everything about the first season of the Puggy Skygen/Realm</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-history">Realm History</div>
+                <h3>How we got 32k</h3>
+                <p><strong>Author:</strong> SeniorFir270</p>
+                <p><strong>Description:</strong> Explains how 32k enchanted items were obtained</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-history">Realm History</div>
+                <h3>Skygen's History</h3>
+                <p><strong>Author:</strong> SeniorFir270</p>
+                <p><strong>Description:</strong> Explains how the Puggy Skygen was created/founded</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-history">Realm History</div>
+                <h3>Story of Marsh</h3>
+                <p><strong>Author:</strong> SeniorFir270</p>
+                <p><strong>Description:</strong> Explains who Marshmallow997 is and what they did</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-history">Realm History</div>
+                <h3>The Vault</h3>
+                <p><strong>Author:</strong> SeniorFir270</p>
+                <p><strong>Description:</strong> Explains what The Vault is and what it contained on the Realm</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>The Life of Rick</h3>
+                <p><strong>Author:</strong> Dr. Toroise</p>
+                <p><strong>Description:</strong> The story of Rick's life</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Life Rick's Kid</h3>
+                <p><strong>Author:</strong> Fawntoroise </p>
+                <p><strong>Written On:</strong> 6/9/25</p>
+                <p><strong>Description:</strong> The story of Rick's kid and his hard life</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>The Fo Gibsh</h3>
+                <p><strong>Author:</strong> Dr. Toroise</p>
+                <p><strong>Description:</strong> The story of Gibish's Life (Not Gibish6612)</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>The Life Gibish</h3>
+                <p><strong>Author:</strong> Dr. Toroise (Skibidi Man) </p>
+                <p><strong>Description:</strong> REWRITE - The story of Gibish's Life (Not Gibish6612)</p>
+            </div>
+
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Gibish Moves</h3>
+                <p><strong>Author:</strong> Dr. Toroise (Skibidi Man)</p>
+                <p><strong>Written On:</strong> 6/9/25</p>
+                <p><strong>Description:</strong> Gibish moves towns! (Not Gibish6612) </p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>The Poop Story</h3>
+                <p><strong>Author:</strong> Poop Lover</p>
+                <p><strong>Description:</strong> The story of the Poop</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>The Poop Story 2</h3>
+                <p><strong>Author:</strong> Poop Lover</p>
+                <p><strong>Description:</strong> REWRITE - The story of the Poop (continued)</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>MOW</h3>
+                <p><strong>Author:</strong> MOW..?</p>
+                <p><strong>Description:</strong> MOW</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>A Gift of Magic</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>The Prophecy</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Seeking Answers</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Path to Home</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Cat of the Pack</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Back in the City</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>No Longer Alone</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+             <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>A Home at Last</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+             <div class="book-card">
+                <div class="book-category cat-fantasy">Fantasy</div>
+                <h3>Magic of Stars</h3>
+                <p><strong>Author:</strong> Marshmallow997</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>Elemental Packs</h3>
+                <p><strong>Author:</strong> OakMussel75253</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>The story of Bold</h3>
+                <p><strong>Author:</strong> Bold</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>Magic Dogs Pt1</h3>
+                <p><strong>Author:</strong> ChucklBunni</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>The Dragon</h3>
+                <p><strong>Author:</strong> Relating</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>SpaceX</h3>
+                <p><strong>Author:</strong> Alexlu525</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>The Adventure</h3>
+                <p><strong>Author:</strong> WILX84</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>Bad Skygen</h3>
+                <p><strong>Author:</strong> TheAxKilla</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-player">Player Written</div>
+                <h3>Ugly Barnacle</h3>
+                <p><strong>Author:</strong> NB22</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-pugsjourney">Pug's Journey</div>
+                <h3>Herdzz083</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Who Herdzz083 is and how much of an impact they made</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-pugsjourney">Pug's Journey</div>
+                <h3>Anotherchain</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> Who AnotherChain is</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-pugsjourney">Pug's Journey</div>
+                <h3>Lifeboat Survival</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> What is Lifeboat Survival and how did it lead to the creation of the server</p>
+            </div>
+            <div class="book-card">
+                <div class="book-category cat-pugsjourney">Pug's Journey</div>
+                <h3>Speiler's Skygen</h3>
+                <p><strong>Author:</strong> SeniorFir270/Puggo</p>
+                <p><strong>Description:</strong> What is Speiler's Skygen and how did it lead to the creation of the server</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puggy Realm - Private Smelters</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2c2f33;
+            color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .taskbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #23272a;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .taskbar a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #2c2f33;
+            color: #7289da;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .taskbar a:hover {
+            background-color: #1e2124;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 30px;
+            background: #23272a;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #5865f2;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #7289da;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #5865f2;
+            padding-bottom: 5px;
+        }
+
+        .split {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .split-text {
+            flex: 1.2;
+        }
+
+        .split-image {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .split-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 2px solid #5865f2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .list {
+            background-color: #2c2f33;
+            border: 2px solid #5865f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .list:hover {
+            background-color: #1e2124;
+            border-color: #7289da;
+        }
+
+        .list strong {
+            color: #7289da;
+        }
+
+        .list p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 900px) {
+            .split {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="taskbar">
+    <a href="../index.html">Home</a>
+    <a href="Changelog.html">Changelogs</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+    <h1>Private Smelters</h1>
+
+    <div class="section">
+        <h2>What Are Private Smelters?</h2>
+
+        <div class="split">
+            <div class="split-text">
+                <div class="list">
+                    <strong>Personal/Private Rooms:</strong>
+                    <p>Private Smelters are personal rooms where you can smelt, craft, and manage items without interference.</p>
+                </div>
+
+                <div class="list">
+                    <strong>Every room includes:</strong>
+                    <p>Furnaces (and blast furnaces), smokers, crafting tables, chests, spots to place kits, and lava disposals.</p>
+                </div>
+
+                <div class="list">
+                    <strong>Another purpose:</strong>
+                    <p>You can let others in your room to trade items with them or let them take items from a kit without the risk of unwanted players taking the items.</p>
+                </div>
+            </div>
+
+            <div class="split-image">
+                <img src="PuggyPrivateSmelters.png" alt="Private Smelters Screenshot">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
