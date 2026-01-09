@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retired Staff</title>
+
+  <style>
+:root {
+  --bg-color: #12121d;
+  --container-bg: rgba(255,255,255,0.05);
+  --panel-bg: rgba(255,255,255,0.08);
+  --panel-hover: rgba(99,102,241,0.12);
+  --text-color: #ffffff;
+  --muted-text: #b5bac1;
+  --accent: #6366f1;
+  --accent-soft: #4f46e5;
+  --border: rgba(99,102,241,0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.taskbar a {
+  padding: 10px 15px;
+  background: var(--panel-bg);
+  color: var(--accent-soft);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.taskbar a:hover, .taskbar button:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 115px auto 70px;
+  padding: 40px;
+  background: var(--container-bg);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.7em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted-text);
+  max-width: 900px;
+  margin: 0 auto 50px;
+  font-size: 1.05em;
+}
+
+.staff-section {
+  margin-bottom: 70px;
+}
+
+.staff-section h2 {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-soft);
+  margin-bottom: 6px;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0 auto 22px;
+  border-radius: 2px;
+}
+
+.staff-desc {
+  text-align: center;
+  color: var(--muted-text);
+  max-width: 900px;
+  margin: 0 auto 35px;
+  font-size: 1em;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.staff-card {
+  background: linear-gradient(
+    180deg,
+    var(--panel-bg),
+    rgba(99,102,241,0.05)
+  );
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--panel-hover);
+  box-shadow: 0 12px 25px rgba(99,102,241,0.45);
+  background: linear-gradient(
+    180deg,
+    var(--panel-hover),
+    rgba(99,102,241,0.08)
+  );
+}
+
+.staff-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.35em;
+  color: var(--accent);
+}
+
+.staff-card p {
+  margin: 0;
+  font-size: 0.95em;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
+
+.staff-card a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+  <div class="taskbar">
+    <div class="nav-links">
+  <a href="../index.html">Home</a>
+  <a href="../General/Changelog.html">Changelogs</a>
+  <a href="../General/Doog.html">The Doog</a>
+  <a href="../General/puggyrealm.html">Puggy Realm</a>
+  <a href="../General/Puggy.html">Puggy Bot</a>
+</div>
+  </div>
+
+  <div class="container">
+    <h1>Retired Staff</h1>
+    <p class="subtitle">
+      Meet the retired Realm staff. Some were removed from staff status, while others retired due to inactivity or personal reasons.
+    </p>
+
+    <section class="staff-section">
+      <h2>Former Staff Members</h2>
+      <div class="section-divider"></div>
+      <p class="staff-desc">
+        These people were staff members before but are no longer part of the staff. Some contributed more than others but they are all on this list equally.
+      </p>
+
+      <div class="staff-grid">
+
+        <div class="staff-card">
+          <h3>HurkyYew</h3>
+          <p>Staff from Season One to Season Three. Created the original VIP area.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>ClovenRug</h3>
+          <p>Joined in Season Two and retired in Season Three after serving as staff.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>Jamesyboy2730</h3>
+          <p>Former Techno Skygen staff. Retired during Season Five.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>SONSETSRCOOL</h3>
+          <p>Co-Owner until Season Two. One of the original OG members.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>CannedSussy</h3>
+          <p>Season One OG and Co-Owner until Season Six.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>Creapercraft452</h3>
+          <p>Upper Admin in Season Three before removal of the role.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>Brandon</h3>
+          <p>Staff from Techno Skygen through Puggy Skygen Season Four.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>Faze Sven123</h3>
+          <p>Staff in Season Three with multiple removals.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>AlphanstienFan4</h3>
+          <p>Events Manager until Season Five. Removed after Discord account deletion.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>Zaneiego</h3>
+          <p>Builder of the Seasons three through five hub.</p>
+        </div>
+        
+        <div class="staff-card">
+          <h3>VtR Smokee</h3>
+          <p>Staff since season 2. Removed after the Puggy/RK Merge when he failed to participate in a staff activity check.</p>
+        </div>
+
+        <div class="staff-card">
+          <h3>NextTheFuture</h3>
+          <p>Staff since season 4. Removed after the Puggy/RK Merge when he failed to participate in a staff activity check.</p>
+        </div>  
+
+        <div class="staff-card">
+          <h3>FawnTortoise</h3>
+          <p>One of the Realm's OG Members. Staff since season 1. Removed after the Puggy/RK Merge when he failed to participate in a staff activity check.</p>
+        </div>  
+
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

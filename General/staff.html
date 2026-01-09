@@ -6,169 +6,169 @@
   <title>Staff & Teams</title>
 
   <style>
-    :root {
-      --bg-color: #1e2124;
-      --container-bg: #23272a;
-      --panel-bg: #2c2f33;
-      --panel-hover: #1a1d1f;
+:root {
+  --bg-color: #12121d;
+  --container-bg: rgba(255,255,255,0.05);
+  --panel-bg: rgba(255,255,255,0.08);
+  --panel-hover: rgba(99,102,241,0.12);
 
-      --text-color: #f2f3f5;
-      --muted-text: #b5bac1;
+  --text-color: #ffffff;
+  --muted-text: #b5bac1;
 
-      --accent: #5865f2;
-      --accent-soft: #7289da;
-      --border: #3f4147;
-    }
+  --accent: #6366f1;
+  --accent-soft: #4f46e5;
+  --border: rgba(99,102,241,0.3);
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #12121d;
-      color: var(--text-color);
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
 
-    .taskbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--container-bg);
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-    }
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
 
-    .nav-links {
-      display: flex;
-      gap: 10px;
-    }
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
 
-    .taskbar a {
-      padding: 10px 15px;
-      background: var(--panel-bg);
-      color: var(--accent-soft);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.25s ease;
-    }
+.taskbar a {
+  padding: 10px 15px;
+  background: var(--panel-bg);
+  color: var(--accent-soft);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
 
-    .taskbar a:hover {
-      background: var(--panel-hover);
-      color: #fff;
-    }
+.taskbar a:hover {
+  background: var(--panel-hover);
+  color: #fff;
+}
 
-    .container {
-      max-width: 1250px;
-      margin: 115px auto 70px;
-      padding: 40px;
-      background: var(--container-bg);
-      border-radius: 14px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-    }
+.container {
+  max-width: 1250px;
+  margin: 115px auto 70px;
+  padding: 40px;
+  background: var(--container-bg);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
 
-    h1 {
-      text-align: center;
-      font-size: 2.7em;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
+h1 {
+  text-align: center;
+  font-size: 2.7em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
 
-    .subtitle {
-      text-align: center;
-      color: var(--muted-text);
-      max-width: 900px;
-      margin: 0 auto 10px;
-      font-size: 1.05em;
-    }
+.subtitle {
+  text-align: center;
+  color: var(--muted-text);
+  max-width: 900px;
+  margin: 0 auto 10px;
+  font-size: 1.05em;
+}
 
-    .subtitle + .subtitle {
-      margin-bottom: 50px;
-      font-size: 0.95em;
-      opacity: 0.9;
-    }
+.subtitle + .subtitle {
+  margin-bottom: 50px;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
 
-    .team-section {
-      margin-bottom: 70px;
-    }
+.staff-section {
+  margin-bottom: 70px;
+}
 
-    .team-section h2 {
-      text-align: center;
-      font-size: 2em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent-soft);
-      margin-bottom: 6px;
-    }
+.staff-section h2 {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-soft);
+  margin-bottom: 6px;
+}
 
-    .section-divider {
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      margin: 0 auto 22px;
-      border-radius: 2px;
-    }
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0 auto 22px;
+  border-radius: 2px;
+}
 
-    .team-desc {
-      text-align: center;
-      color: var(--muted-text);
-      max-width: 850px;
-      margin: 0 auto 35px;
-      font-size: 1em;
-    }
+.staff-desc {
+  text-align: center;
+  color: var(--muted-text);
+  max-width: 850px;
+  margin: 0 auto 35px;
+  font-size: 1em;
+}
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 26px;
-    }
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 26px;
+}
 
-    .team-card {
-      background: linear-gradient(
-        180deg,
-        var(--panel-bg),
-        #26292d
-      );
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
-    }
+.staff-card {
+  background: linear-gradient(
+    180deg,
+    var(--panel-bg),
+    rgba(99,102,241,0.05)
+  );
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
 
-    .team-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-      border-color: var(--accent);
-      background: linear-gradient(
-        180deg,
-        var(--panel-hover),
-        #202327
-      );
-    }
+.staff-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--panel-hover);
+  box-shadow: 0 12px 25px rgba(99,102,241,0.45);
+  background: linear-gradient(
+    180deg,
+    var(--panel-hover),
+    rgba(99,102,241,0.08)
+  );
+}
 
-    .team-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.35em;
-      color: #a5b4ff;
-    }
+.staff-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.35em;
+  color: var(--accent);
+}
 
-    .team-card p {
-      margin: 0;
-      font-size: 0.95em;
-      color: var(--muted-text);
-      line-height: 1.5;
-    }
+.staff-card p {
+  margin: 0;
+  font-size: 0.95em;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
 
-    .team-card a {
-      color: inherit;
-      text-decoration: none;
-    }
+.staff-card a {
+  color: inherit;
+  text-decoration: none;
+}
   </style>
 </head>
 
@@ -187,79 +187,77 @@
   <div class="container">
     <h1>Staff & Teams</h1>
     <p class="subtitle">
-      Meet the RK and Puggy staff! Our dedicated team who works very hard to ensure the best experience for our community!
+      Meet the RK and Puggy staff! Our dedicated team works hard to ensure the best experience for the community.
     </p>
     <p class="subtitle">
-      Note: This list only shows staff members in their highest role. Members may appear in other teams as well.
+      Note: This list only shows staff members in their highest role. Members may appear in other teams as well. For retired staff, visit the <a href="../Staff Pages/Retired_Staff.html" style="color: var(--accent); text-decoration: underline;">Retired Staff</a> page.
     </p>
 
-    <section class="team-section">
+    <section class="staff-section">
       <h2>Executive Council</h2>
       <div class="section-divider"></div>
-      <p class="team-desc">
+      <p class="staff-desc">
         The people managing overall operations and major decisions.
       </p>
 
-      <div class="team-grid">
-        <div class="team-card"><a href="../Staff Pages/Puggo_Staff_Page.html"><h3>Puggo</h3></a><p>Founder of Puggy and Head of Development</p></div>
-        <div class="team-card"><a href="../Staff Pages/Gibish_Staff_Page.html"><h3>Gibish</h3></a><p>General Management & Co-Founder</p></div>
-        <div class="team-card"><a href="../Staff Pages/Meta_Staff_Page.html"><h3>Meta</h3></a><p>General Management & Co-Founder</p></div>
-        <div class="team-card"><a href="../Staff Pages/Cat-Support_Staff_Page.html"><h3>Cat Support</h3></a><p>General Management</p></div>
-        <div class="team-card"><a href="../Staff Pages/Duck_Staff_Page.html"><h3>Duck</h3></a><p>Founder of RK</p></div>
-        <div class="team-card"><a href="../Staff Pages/Corbs_Staff_Page.html"><h3>Corbs</h3></a><p>Head of Builder Team</p></div>
-        <div class="team-card"><a href="../Staff Pages/Spud-Cat_Staff_Page.html"><h3>Spud Cat</h3></a><p>Head of Moderator Team</p></div>
+      <div class="staff-grid">
+        <div class="staff-card"><a href="../Staff Pages/Puggo_Staff_Page.html"><h3>Puggo</h3></a><p>Founder of Puggy & Head of Development</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Gibish_Staff_Page.html"><h3>Gibish</h3></a><p>General Management & Co-Founder</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Meta_Staff_Page.html"><h3>Meta</h3></a><p>General Management & Co-Founder</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Cat-Support_Staff_Page.html"><h3>Cat Support</h3></a><p>General Management</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Duck_Staff_Page.html"><h3>Duck</h3></a><p>Founder of RK</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Corbs_Staff_Page.html"><h3>Corbs</h3></a><p>Head of Builder Team</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Spud-Cat_Staff_Page.html"><h3>Spud Cat</h3></a><p>Head of Moderator Team</p></div>
       </div>
     </section>
 
-    <section class="team-section">
+    <section class="staff-section">
       <h2>Developer Team</h2>
       <div class="section-divider"></div>
-      <p class="team-desc">
+      <p class="staff-desc">
         Responsible for coding, systems, and addon development.
       </p>
 
-      <div class="team-grid">
-        <div class="team-card"><h3>Sealeopard</h3><p>RK Skyblock Addon Developer</p></div>
-        <div class="team-card"><a href="../Staff Pages/Kitty-Shizz_Staff_Page.html"><h3>Kitty Shizz</h3></a><p>Puggy Realm & Bot Developer</p></div>
-        <div class="team-card"><h3>Neon</h3><p>RK Skyblock Developer</p></div>
-        <div class="team-card"><h3>CorniestMetal</h3><p>RK Skyblock Addon Developer</p></div>
-        <div class="team-card"><h3>Aveql</h3><p>Assistant Addon Developer</p></div>
+      <div class="staff-grid">
+        <div class="staff-card"><h3>Sealeopard</h3><p>RK Skyblock Addon Developer</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Kitty-Shizz_Staff_Page.html"><h3>Kitty Shizz</h3></a><p>Puggy Realm & Bot Developer</p></div>
+        <div class="staff-card"><h3>Neon</h3><p>RK Skyblock Developer</p></div>
+        <div class="staff-card"><h3>CorniestMetal</h3><p>RK Skyblock Addon Developer</p></div>
+        <div class="staff-card"><h3>Aveql</h3><p>Assistant Addon Developer</p></div>
       </div>
     </section>
 
-    <section class="team-section">
+    <section class="staff-section">
       <h2>Builder Team</h2>
       <div class="section-divider"></div>
-      <p class="team-desc">
+      <p class="staff-desc">
         Responsible for building and design within the Realms.
       </p>
 
-      <div class="team-grid">
-        <div class="team-card"><h3>Crispy Ginger</h3><p>Puggy Realm Builder</p></div>
-        <div class="team-card"><h3>Mitchell</h3><p>RK Realm Builder</p></div>
-        <div class="team-card"><h3>Shane</h3><p>RK Realm Builder</p></div>
-        <div class="team-card"><a href="../Staff Pages/Lrtlgamer_Staff_Page.html"><h3>Lrtlgamer / Snuggo</h3></a><p>Assistant Builder</p></div>
-        <div class="team-card"><h3>JumperLifeX</h3><p>Trial Builder</p></div>
+      <div class="staff-grid">
+        <div class="staff-card"><h3>Crispy Ginger</h3><p>Puggy Realm Builder</p></div>
+        <div class="staff-card"><h3>Mitchell</h3><p>RK Realm Builder</p></div>
+        <div class="staff-card"><h3>Shane</h3><p>RK Realm Builder</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Lrtlgamer_Staff_Page.html"><h3>Lrtlgamer / Snuggo</h3></a><p>Assistant Builder</p></div>
+        <div class="staff-card"><h3>JumperLifeX</h3><p>Trial Builder</p></div>
       </div>
     </section>
 
-    <section class="team-section">
+    <section class="staff-section">
       <h2>Moderator Team</h2>
       <div class="section-divider"></div>
-      <p class="team-desc">
+      <p class="staff-desc">
         Responsible for moderation across Discord servers and Realms.
       </p>
 
-      <div class="team-grid">
-        <div class="team-card"><h3>Shuit</h3><p>Administrator</p></div>
-        <div class="team-card"><h3>TheAxKilla</h3><p>Senior Moderator (Puggy)</p></div>
-        <div class="team-card"><h3>Peachy Creep</h3><p>Senior Moderator (RK)</p></div>
-        <div class="team-card"><a href="../Staff Pages/Squiblerb_Staff_Page.html"><h3>Squiblerb</h3></a><p>Discord Moderator</p></div>
-        <div class="team-card"><h3>Christian</h3><p>RK Realm & Discord Moderator</p></div>
+      <div class="staff-grid">
+        <div class="staff-card"><h3>Shuit</h3><p>Administrator</p></div>
+        <div class="staff-card"><h3>TheAxKilla</h3><p>Senior Moderator (Puggy)</p></div>
+        <div class="staff-card"><h3>Peachy Creep</h3><p>Senior Moderator (RK)</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Squiblerb_Staff_Page.html"><h3>Squiblerb</h3></a><p>Discord Moderator</p></div>
+        <div class="staff-card"><h3>Christian</h3><p>RK Realm & Discord Moderator</p></div>
       </div>
     </section>
-
   </div>
-
 </body>
 </html>
