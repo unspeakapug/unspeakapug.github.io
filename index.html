@@ -248,6 +248,7 @@ a:hover { text-decoration: underline; }
   </div>
 
   <div></div>
+  <a class="nav-button" href="General/Announcements.html" data-k="announcements">Announcements</a>
   <a class="nav-button" href="General/Doog.html" data-k="doog">The Doog</a>
   <a class="nav-button" href="General/staff.html" data-k="staff">Meet our Staff</a>
 
@@ -260,67 +261,6 @@ a:hover { text-decoration: underline; }
   <p data-k="about3">Need help? Reach out to us at the <a href="https://discord.gg/GcrVCYmt4U">Puggy Discord Server</a> or <a href="https://discord.gg/4SHxygXA">RK.</a></p>
 </div>
 
-<div class="footer">© 2025 Puggy/RK. All rights reserved.</div>
-
-<script>
-  const modeBtn = document.getElementById("mode");
-  const savedMode = localStorage.getItem("site-mode");
-  if (savedMode) {
-    document.body.classList.toggle("light", savedMode === "light");
-    modeBtn.textContent = savedMode === "light" ? "☀️" : "🌙";
-  }
-
-  modeBtn.onclick = () => {
-    document.body.classList.toggle("light");
-    const mode = document.body.classList.contains("light") ? "light" : "dark";
-    modeBtn.textContent = mode === "light" ? "☀️" : "🌙";
-    localStorage.setItem("site-mode", mode);
-  };
-
-  const translations = {
-    es: {
-      title: "Bienvenido a Puggy Wiki",
-      desc: "Explora todo sobre la comunidad Puggy, incluyendo nuestro bot, reino, staff y más.",
-      discord: "Discord",
-      doog: "El Doog",
-      realm: "Reino",
-      bot: "Bot Puggy",
-      staff: "Conoce al staff",
-      aboutTitle: "Sobre Puggy",
-      about1: "Estas cosas fueron creadas para mejorar la experiencia en Minecraft y Discord.",
-      about2: "Qué es RK? RK es un servidor más grande con el que nos fusionamos el 2/12/25.",
-
-      about3: "¿Necesitas ayuda? Únete a nuestro Servidor de Discord."
-    },
-    en: {} 
-  };
-
-  const langBtn = document.getElementById("lang");
-  let currentLang = localStorage.getItem("site-lang") || "en";
-
-  function translatePage(lang) {
-    document.querySelectorAll("[data-k]").forEach(el => {
-      const key = el.dataset.k;
-      if (translations[lang] && translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
-      } else if (translations['en'][key]) {
-        el.innerHTML = translations['en'][key];
-      }
-    });
-  }
-
-  translatePage(currentLang);
-  langBtn.textContent = currentLang === "en" ? "ES" : "EN";
-
-  langBtn.onclick = () => {
-    currentLang = currentLang === "en" ? "es" : "en";
-    localStorage.setItem("site-lang", currentLang);
-    translatePage(currentLang);
-    langBtn.textContent = currentLang === "en" ? "ES" : "EN";
-  };
-</script>
-<script src="index.js"></script>
-
-
+<div class="footer">© 2026 Puggy/RK. All rights reserved.</div>
 </body>
 </html>
