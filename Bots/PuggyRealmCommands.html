@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Bot Realm Commands</title>
+
+<style>
+:root {
+  --bg: #12121d;
+  --container: rgba(255,255,255,0.05);
+  --card: rgba(255,255,255,0.06);
+  --card-hover: rgba(99,102,241,0.12);
+  --accent: #6366f1;
+  --accent2: #4f46e5;
+  --text: #ffffff;
+  --muted: #cfcfcf;
+  --shadow: rgba(0,0,0,0.5);
+
+  --online: #4ade80;
+  --issues: #facc15;
+  --offline: #ef4444;
+  --beta: #60a5fa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.taskbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 14px;
+  background: #1c1d28;
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--container);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 2.6rem;
+}
+
+.page-desc {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--muted);
+}
+
+.command-section {
+  margin-bottom: 50px;
+}
+
+.command-section h2 {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent2);
+  padding-bottom: 6px;
+  margin-bottom: 25px;
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.command-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.command-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--card-hover);
+  box-shadow: 0 12px 25px rgba(99,102,241,0.45);
+}
+
+.command-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.command-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.online { background: var(--online); box-shadow: 0 0 6px rgba(74,222,128,0.8); }
+.issues { background: var(--issues); box-shadow: 0 0 6px rgba(250,204,21,0.7); }
+.offline { background: var(--offline); box-shadow: 0 0 6px rgba(239,68,68,0.7); }
+.beta { background: var(--beta); box-shadow: 0 0 6px rgba(96,165,250,0.7); }
+</style>
+</head>
+
+<body>
+
+<div class="taskbar">
+  <a href="../index.html">Home</a>
+  <a href="../Announcements.html">Announcements</a>
+  <a href="../General/Doog.html">The Doog</a>
+  <a href="../General/puggyrealm.html">Puggy Realm</a>
+  <a href="../General/Puggy.html">Puggy Bot</a>
+</div>
+
+<div class="container">
+  <h1>Puggy Bot Realm Commands</h1>
+    <p class="page-desc"> A complete and organized list of all commands available for usage in the Puggy Realm. None of these commands are available for the RK Skyblock. <b>IMPORTANT: </b>If you are looking for the full list of commands, go to  <a href="PuggyCommands.html">Puggy Commands</a>. If you are looking for Puggy Bot External commands, go to <a href="PuggyExternalCommands.html">Puggy External Commands</a>.</p>
+
+
+  <section class="command-section">
+    <h2>Realm Commands</h2>
+    <div class="command-grid">
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!quicktp</h3>
+        <p>Teleports you to a room where there are npc to teleport anywhere in the Realm!</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!kit</h3>
+        <p>Shows you a list of kits you can claim using commands</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!event-kit</h3>
+        <p>Gives you the latest even kit</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!food-kit</h3>
+        <p>Gives you a kit full of food items to prevent you from starving</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!starter-kit</h3>
+        <p>Gives you a starter kit to begin your journey in the Realm</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!credits</h3>
+        <p>Shows you the credits for the Realm</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!lag</h3>
+        <p>Kills all unimportant entities to remove lag</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!shareplot and !removeplotaccess</h3>
+        <p>Allows you to share your plot with any user of your choice.</p>
+        <p>Allows you to remove someones access from your plot</p>
+        <p>Note: If your plot is in the old system it will not work. You will need to contact staff to move your plot to the new system.</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!tpa, tpaccept, and tpdeny</h3>
+        <p>Allows you to send a teleport request to another user, accept a teleport request, or deny a teleport request.</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!particle, !particlepurchase, and !removeparticle</h3>
+        <p>Allows you to enable or disable either one of your particle effects</p>
+        <p>Allows you to purchase a particle effect from the shop</p>
+        <p>Allows you to remove your particle effect to allow you to purchase another</p>
+      </div>
+
+      <div class="command-card">
+        <div class="status"><span class="dot offline"></span></div>
+        <h3>!emote, !emotepurchase, and !removeemote</h3>
+        <p>Allows you to enable or disable either one of your emotes</p>
+        <p>Allows you to purchase an emote from the shop</p>
+        <p>Allows you to remove your emote to allow you to purchase another</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="command-section">
+    <h2>Specific Rank Commands</h2>
+    <div class="command-grid">
+
+        <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!apple</h3>
+        <p>Gives people with the Apple rank one stack of apples, golden apples, and enchanted golden apples</p>
+        </div>
+
+        <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
+        <h3>!nothing</h3>
+        <p>Secret</p>
+        </div>
+
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
