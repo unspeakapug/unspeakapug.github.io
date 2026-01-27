@@ -5,53 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puggy Realm - Private Smelters</title>
     <style>
+
+        :root {
+        --bg: #12121d;
+        --text: #ffffff;
+        --accent1: #6366f1;
+        --accent2: #4f46e5;
+        --card: rgba(255,255,255,0.05);
+        --card-hover: rgba(99,102,241,0.1);
+        --shadow: rgba(0,0,0,0.5);
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #2c2f33;
-            color: #f6f6f6;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow-y: auto;
         }
 
         .taskbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #23272a;
-            padding: 10px 0;
-            text-align: center;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: center;
-            gap: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #1e1f29;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 1000;
+        box-shadow: 0 2px 12px var(--shadow);
         }
 
         .taskbar a {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #2c2f33;
-            color: #7289da;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        padding: 8px 16px;
+        background: #1c1d28;
+        border-radius: 8px;
+        font-weight: bold;
+        color: var(--accent1);
+        transition: 0.3s;
         }
 
         .taskbar a:hover {
-            background-color: #1e2124;
-            color: #ffffff;
+        background: #2c2f33;
+        color: #fff;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 100px auto;
-            padding: 30px;
-            background: #23272a;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        max-width: 1000px;
+        margin: 120px auto 50px;
+        padding: 30px;
+        background: var(--card);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px var(--shadow);
         }
 
         h1 {
@@ -92,34 +97,73 @@
         }
 
         .list {
-            background-color: #2c2f33;
-            border: 2px solid #5865f2;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+        background: var(--card);
+        border: 1px solid var(--accent1);
+        padding: 18px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px var(--shadow);
         }
 
         .list:hover {
-            background-color: #1e2124;
-            border-color: #7289da;
+        background: var(--card-hover);
+        border-color: var(--accent2);
+        transform: translateY(-4px);
         }
 
         .list strong {
-            color: #7289da;
+        color: var(--accent1);
         }
 
         .list p {
             margin: 5px 0 0;
             font-size: 0.9em;
         }
-
-        @media (max-width: 900px) {
-            .split {
-                flex-direction: column;
-            }
-        }
     </style>
+
+    <style>
+    @media (max-width: 768px) {
+
+  .taskbar {
+    position: static;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    margin: 20px auto 40px;
+    padding: 20px;
+  }
+
+  .container {
+    padding-bottom: 140px;
+  }
+
+  .split {
+    flex-direction: column;
+  }
+
+  .split-image img {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 900px) {
+    .split {
+        flex-direction: column;
+    }
+}
+</style>
 </head>
 <body>
 

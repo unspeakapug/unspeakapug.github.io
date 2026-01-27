@@ -6,256 +6,259 @@
 <title>The Doog</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #12121d;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
 }
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
 .taskbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #0f1012;
-    padding: 10px 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e1f29;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px var(--shadow);
 }
 
 .taskbar a {
-    padding: 10px 16px;
-    background-color: #1b1d20;
-    color: #8b93ff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.25s;
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
 }
-
 .taskbar a:hover {
-    background-color: #262a30;
-    color: #ffffff;
+  background: #2c2f33;
+  color: #fff;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 120px auto 70px;
-    padding: 45px;
-    background-color: #1b1d20;
-    border-radius: 14px;
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,0.03),
-        0 25px 60px rgba(0,0,0,0.85);
+  max-width: 1000px;
+  margin: 120px auto 50px;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
 }
 
 h1 {
-    color: #6b75ff;
-    text-align: center;
-    font-size: 2.7em;
-    margin-bottom: 10px;
+  text-align: center;
+  color: var(--accent1);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
 }
-
-h2 {
-    color: #8b93ff;
-    text-align: center;
-    margin-top: 45px;
-}
-
 p {
-    text-align: center;
-    font-size: 1.1em;
-    line-height: 1.7;
-    max-width: 850px;
-    margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    margin: 45px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 30px 0;
 }
-
 .search input {
-    width: min(380px, 85%);
-    padding: 14px 16px;
-    font-size: 1.05em;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #121316;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+  width: min(380px, 85%);
+  padding: 12px 14px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #121316;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
 }
-
 .random-btn {
-    padding: 14px 18px;
-    font-size: 1em;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: #1f2230;
-    color: #8b93ff;
-    font-weight: bold;
-    transition: 0.25s;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #1f2230;
+  color: var(--accent1);
+  font-weight: bold;
+  transition: 0.25s;
 }
-
-.random-btn:hover {
-    background-color: #2a2f45;
-    color: white;
-}
+.random-btn:hover { background-color: #2a2f45; color: #fff; }
 
 .thumb-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 22px;
-    margin-top: 30px;
-    padding-bottom: 45px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .thumb {
-    background-color: #121316;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.25s;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  background: #121316;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
 }
-
 .thumb:hover {
-    transform: scale(1.06);
-    background-color: #181a1e;
+  transform: scale(1.05);
+  background-color: #181a1e;
 }
-
 .thumb img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
 }
 
 .photo-display-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
-
 .photo-display {
-    background-color: #121316;
-    padding: 38px;
-    border-radius: 16px;
-    max-width: 900px;
-    width: 100%;
-    box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.04),
-        0 30px 70px rgba(0,0,0,0.9);
-    animation: fadeIn 0.4s ease;
+  background-color: #121316;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 30px 70px rgba(0,0,0,0.9);
+  animation: fadeIn 0.4s ease;
 }
-
 .photo-display img {
-    display: block;
-    margin: 32px auto;
-    max-width: 100%;
-    max-height: 520px;
-    border-radius: 14px;
-    box-shadow: 0 18px 50px rgba(0,0,0,0.95);
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  max-height: 520px;
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.95);
 }
 
 .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-
 .nav-buttons button {
-    padding: 12px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: #1f2230;
-    color: #8b93ff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.25s;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #1f2230;
+  color: var(--accent1);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.nav-buttons button:hover:not(:disabled) { background-color: #2a2f45; color: #fff; }
+.nav-buttons button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.error { color: #ff7070; text-align: center; margin-top: 15px; font-weight: bold; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0); } }
+
+.mobile-only {
+    display: none;
 }
 
-.nav-buttons button:hover:not(:disabled) {
-    background-color: #2a2f45;
-    color: white;
-}
+</style>
 
-.nav-buttons button:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-}
+<style>/*MOBILE STUFFS AGAIN*/
+@media (max-width: 768px) {
 
-.error {
-    color: #ff7070;
+.taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
     text-align: center;
-    margin-top: 25px;
-    font-weight: bold;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .container { 
+    margin: 20px auto 40px; 
+    padding: 20px; 
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+  .thumb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .thumb img {
+    height: 80px; 
+    object-fit: cover;
+  }
+
+  .mobile-only {
+    display: block;
+  }
 }
 </style>
 </head>
-
 <body>
 
 <div class="taskbar">
-    <a href="../index.html">Home</a>
-    <a href="Announcements.html">Announcements</a>
-    <a href="Doog.html">The Doog</a>
-    <a href="puggyrealm.html">Puggy Realm</a>
-    <a href="Puggy.html">Puggy Bot</a>
+  <a href="../index.html">Home</a>
+  <a href="Announcements.html">Announcements</a>
+  <a href="Doog.html">The Doog</a>
+  <a href="puggyrealm.html">Puggy Realm</a>
+  <a href="Puggy.html">Puggy Bot</a>
 </div>
 
 <div class="container">
+  <h1>The Doog</h1>
+  <p>Welcome to <b>The Doog Gallery</b>.<br>Search photos by number or select one of the featured Doog photos below to get their photo number!</p>
 
-<h1>The Doog</h1>
-<p>
-Welcome to <b>The Doog Gallery</b>.<br>
-Search photos by number or select one of the featured Doog photos below to get their photo number!
-</p>
-
-<div class="search">
-    <input id="photoInput" placeholder="Enter Doog photo number (e.g. 36)"
-           onkeydown="if(event.key==='Enter') loadPhoto()">
+  <div class="search">
+    <input id="photoInput" placeholder="Enter Doog photo number (e.g. 36)" onkeydown="if(event.key==='Enter') loadPhoto()">
     <button class="random-btn" onclick="randomDoog()">Random</button>
-</div>
+  </div>
 
-<h2>Featured Doogs</h2>
-
-<div class="thumb-grid">
+  <div class="thumb-grid">
     <div class="thumb" onclick="quickLoad(1)"><img src="DOOGS/1.jpg"></div>
     <div class="thumb" onclick="quickLoad(26)"><img src="DOOGS/26.jpg"></div>
     <div class="thumb" onclick="quickLoad(36)"><img src="DOOGS/36.jpg"></div>
     <div class="thumb" onclick="quickLoad(41)"><img src="DOOGS/41.jpg"></div>
     <div class="thumb" onclick="quickLoad(54)"><img src="DOOGS/54.jpg"></div>
-</div>
+    <div class="thumb mobile-only" onclick="quickLoad(60)"><img src="DOOGS/60.jpg"></div> 
+  </div>
 
-<div id="photo"></div>
-<div id="error" class="error"></div>
-
+  <div id="photo"></div>
+  <div id="error" class="error"></div>
 </div>
 
 <script src="DoogDescriptions.js"></script>
 <script>
 let currentDoog = null;
 
-function quickLoad(n) {
-    document.getElementById("photoInput").value = n;
-    loadPhoto();
-}
-
+function quickLoad(n) { document.getElementById("photoInput").value = n; loadPhoto(); }
 function randomDoog() {
     const keys = Object.keys(doogDescriptions);
     const rand = keys[Math.floor(Math.random() * keys.length)];
@@ -271,42 +274,45 @@ function loadPhoto() {
     out.innerHTML = "";
     err.textContent = "";
 
-    if (!num || isNaN(num)) {
-        err.textContent = "Please enter a valid photo number.";
-        return;
-    }
+    if (!num || isNaN(num)) { err.textContent = "Please enter a valid photo number."; return; }
 
-    const img = new Image();
-    img.onload = () => {
-        currentDoog = num;
-        const info = doogDescriptions[num] || {};
-        out.innerHTML = `
-        <div class="photo-display-wrapper">
-            <div class="photo-display">
+    const exts = ['jpg','png','jpeg'];
+    let found = false;
+
+    exts.forEach(ext => {
+        if(found) return;
+        const img = new Image();
+        img.onload = () => {
+            if(found) return;
+            found = true;
+            currentDoog = num;
+            const info = doogDescriptions[num] || {};
+            out.innerHTML = `
+            <div class="photo-display-wrapper">
+              <div class="photo-display">
                 <h2>${info.title || `Photo ${num}`}</h2>
                 <img src="${img.src}">
                 <p>${info.desc || ""}</p>
-
                 <div class="nav-buttons">
-                    <button onclick="changeDoog(-1)" ${num <= 1 ? "disabled" : ""}>◀ Previous</button>
-                    <button onclick="changeDoog(1)">Next ▶</button>
+                  <button onclick="changeDoog(-1)" ${num<=1?"disabled":""}>◀ Previous</button>
+                  <button onclick="changeDoog(1)">Next ▶</button>
                 </div>
-            </div>
-        </div>`;
-    };
-    img.onerror = () => {
-        err.textContent = `Doog photo ${num} not found.`;
-    };
-    img.src = `DOOGS/${num}.jpg`;
+              </div>
+            </div>`;
+        };
+        img.onerror = () => {};
+        img.src = `DOOGS/${num}.${ext}`;
+    });
+
+    setTimeout(()=>{ if(!found) err.textContent = `Doog photo ${num} not found.`; }, 500);
 }
 
 function changeDoog(dir) {
-    if (currentDoog === null) return;
-    const next = currentDoog + dir;
+    if(currentDoog===null) return;
+    const next = currentDoog+dir;
     document.getElementById("photoInput").value = next;
     loadPhoto();
 }
 </script>
-
 </body>
 </html>

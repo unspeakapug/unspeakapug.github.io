@@ -177,6 +177,68 @@ h1 {
   color: var(--accent2);
 }
 </style>
+
+<style>
+/* MOBILE STUFF */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 35px auto;
+    padding: 0px;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bot-status {
+    position: static;
+    transform: none;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .features-list li {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .links-grid li {
+    width: 100%;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -194,9 +256,9 @@ h1 {
     <h1>Puggy Bot</h1>
 
     <div class="bot-status">
-        <div><span class="dot online"></span> Discord Bot — Online</div>
-        <div><span class="dot online"></span> Realm Bot — Online</div>
-        <div><span class="dot online"></span> Beta Bot — Online</div>
+        <div><span class="dot offline"></span> Discord Bot — Offline</div>
+        <div><span class="dot offline"></span> Realm Bot — Offline</div>
+        <div><span class="dot offline"></span> Beta Bot — Offline</div>
     </div>
 </div>  
   <p class="page-desc">The Puggy Bot is a Discord bot designed to make your experience better. Its features range from fun to utility, making it useful for even more people. Theres also a Beta Bot with features that aren't ready to be added to the primary bot yet.</p>

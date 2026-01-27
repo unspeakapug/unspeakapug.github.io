@@ -115,6 +115,38 @@ h1 {
   margin-bottom: 10px;
 }
 </style>
+
+<style>/*MOBILE STUFFS*/
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    margin: 30px auto 50px;
+  }
+
+}
+</style>
 </head>
 <body>
 

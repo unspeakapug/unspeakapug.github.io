@@ -196,6 +196,101 @@ a:hover { text-decoration: underline; }
   body.light .nav-button { color:black; }
   body.light .subbtn { color:black; }
 </style>
+
+<style> /*MOBILE STUFF*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+  .topbar {
+    top: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+
+  .topbar button {
+    padding: 7px 12px;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+  padding: 90px 16px 60px;
+  text-align: center;
+  }
+
+  .hero > div {
+    top: 18px !important;
+  }
+
+  .hero > div:first-of-type {
+    left: 18px !important;
+  }
+
+  .hero > div:nth-of-type(2) {
+    right: 18px !important;
+  }
+
+  .hero img {
+    width: 64px !important;
+    height: 64px !important;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    margin-top: 24px;
+    line-height: 1.2;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 35px auto;
+    padding: 0px;
+  }
+
+  .nav-button {
+    width: 100%;
+    min-width: unset;
+    font-size: 1.15rem;
+    padding: 10px;
+  }
+
+  .nav-button:hover {
+    transform: none;
+  }
+
+  .nav-submenu {
+    gap: 8px;
+  }
+
+  .subbtn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .about {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .about h2 {
+    font-size: 1.7rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    padding: 18px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -220,17 +315,17 @@ a:hover { text-decoration: underline; }
 
 <div class="container">
 
-  <div class="nav-button" id="discordBtn" data-k="discord">Discord
+  <div class="nav-button" id="discordBtn" data-k="discord">Discords
     <div class="nav-submenu" id="discordSub">
       <a class="subbtn" href="https://discord.gg/GcrVCYmt4U">Puggy</a>
-      <a class="subbtn" href="https://discord.gg/4SHxygXA">RK</a>
+      <a class="subbtn" href="https://discord.gg/KetANFq65s">RK</a>
     </div>
   </div>
 
-  <div class="nav-button" id="realmBtn" data-k="realm">Realm
+  <div class="nav-button" id="realmBtn" data-k="realm">Realms
     <div class="nav-submenu" id="realmSub">
       <a class="subbtn" href="General/puggyrealm.html">Puggy Realm</a>
-      <a class="subbtn" href="General/rkrealm.html">RK Realm</a>
+      <a class="subbtn" href="General/rkrealm.html">RK Realm (NOT PUBLIC YET)</a>
     </div>
   </div>
 
