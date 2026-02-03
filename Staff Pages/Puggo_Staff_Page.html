@@ -24,20 +24,27 @@ body {
   color: var(--text);
 }
 
-a { color: var(--accent1); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--accent1);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 .taskbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: #1e1f29;
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
   z-index: 1000;
   box-shadow: 0 2px 12px var(--shadow);
+  flex-wrap: wrap;
 }
 
 .taskbar a {
@@ -47,7 +54,9 @@ a:hover { text-decoration: underline; }
   font-weight: bold;
   color: var(--accent1);
   transition: 0.3s;
+  white-space: nowrap;
 }
+
 .taskbar a:hover {
   background: #2c2f33;
   color: #fff;
@@ -56,7 +65,7 @@ a:hover { text-decoration: underline; }
 .main-content {
   display: flex;
   max-width: 1200px;
-  margin: 120px auto 50px;
+  margin: 100px auto 50px;
   gap: 30px;
   padding: 0 20px;
   flex-wrap: wrap;
@@ -69,11 +78,28 @@ a:hover { text-decoration: underline; }
   border-radius: 12px;
   box-shadow: 0 4px 20px var(--shadow);
 }
-.sidebar h3 { color: var(--accent1); margin-bottom: 15px; }
-.sidebar ul { list-style: none; padding: 0; }
-.sidebar li { margin-bottom: 10px; }
-.sidebar a { color: var(--text); }
-.sidebar a:hover { color: var(--accent1); }
+
+.sidebar h3 {
+  color: var(--accent1);
+  margin-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  color: var(--text);
+}
+
+.sidebar a:hover {
+  color: var(--accent1);
+}
 
 .profile-section {
   flex: 1;
@@ -121,6 +147,7 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 4px 20px var(--shadow);
   transition: 0.3s;
 }
+
 .profile-card:hover {
   background: var(--card-hover);
 }
@@ -138,25 +165,55 @@ a:hover { text-decoration: underline; }
 .links a {
   display: inline-block;
   margin-right: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   padding: 6px 10px;
   border-radius: 8px;
   background: rgba(99,102,241,0.2);
   transition: 0.3s;
 }
+
 .links a:hover {
   background: var(--accent1);
   color: #fff;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
   .main-content {
     flex-direction: column;
+    margin: 60px auto 40px;
   }
-  .sidebar { width: 100%; }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .main-content {
+    margin-top: 40px;
+  }
+
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <div class="taskbar">
@@ -168,6 +225,7 @@ a:hover { text-decoration: underline; }
 </div>
 
 <div class="main-content">
+
   <div class="sidebar">
     <h3>Contents</h3>
     <ul>
@@ -178,6 +236,7 @@ a:hover { text-decoration: underline; }
   </div>
 
   <div class="profile-section">
+
     <div class="profile-header">
       <div class="profile-image">
         <img src="../General/DOOGS/84.jpg" alt="Puggo">
@@ -191,7 +250,7 @@ a:hover { text-decoration: underline; }
     <div class="profile-card" id="bio">
       <h3>Bio</h3>
       <p>Hello! I'm Puggo, the founder of the Puggy Project. I created the Puggy Discord in October of 2023 and the Puggy Realm all the way back in 2021. In June 2024 I stepped down from owner, putting one of the Co-Founders, Meta4167 take my position. After this I took position as manager under ownership. June 29th of 2024, Kitty Shizz and I began to create the Puggy Bot.</p>
-      <p>In the Puggy Realm I own a clan called the NPPP which stands for the No Pants People Party. If any of you get the reference, good for you</p>
+      <p>In the Puggy Realm I own a clan called the NPPP which stands for the No Pants People Party. If any of you get the reference, good for you.</p>
     </div>
 
     <div class="profile-card" id="important-info">
@@ -210,6 +269,7 @@ a:hover { text-decoration: underline; }
       <a href="https://www.reddit.com/user/Mysterious_Effect989/" target="_blank">Reddit</a>
       <a href="https://steamcommunity.com/profiles/76561198084451469" target="_blank">Steam</a>
     </div>
+
   </div>
 </div>
 

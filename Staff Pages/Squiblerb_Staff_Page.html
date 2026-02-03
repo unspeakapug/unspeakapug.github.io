@@ -158,6 +158,42 @@ a:hover { text-decoration: underline; }
   .sidebar { width: 100%; }
 }
 </style>
+
+<style>@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    flex-direction: column;
+    margin: 60px auto 40px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .main-content {
+    margin-top: 40px;
+  }
+
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+}
+</style>
 </head>
 <body>
 

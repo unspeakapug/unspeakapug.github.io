@@ -55,7 +55,7 @@ a:hover { text-decoration: underline; }
 
 .main-content {
   display: flex;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 120px auto 50px;
   gap: 30px;
   padding: 0 20px;
@@ -63,7 +63,7 @@ a:hover { text-decoration: underline; }
 }
 
 .sidebar {
-  flex: 0 0 280px;
+  flex: 0 0 250px;
   background: #1c1d28;
   padding: 20px;
   border-radius: 12px;
@@ -149,11 +149,28 @@ a:hover { text-decoration: underline; }
   color: #fff;
 }
 
-@media (max-width: 900px) {
+/* MOBILE STUFFs */
+@media (max-width: 768px) {
   .main-content {
     flex-direction: column;
+    margin: 40px auto 40px;
   }
-  .sidebar { width: 100%; }
+  .sidebar { display: none; }
+
+  .taskbar {
+    flex-wrap: wrap;     
+    justify-content: center; 
+    position: static;     
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;         
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
 }
 </style>
 </head>
@@ -191,7 +208,7 @@ a:hover { text-decoration: underline; }
     <div class="profile-card" id="bio">
       <h3>Bio</h3>
       <p>Hello! I'm Gibish. I joined the Puggy project back when the Realm was first being made. I've stayed in my position helping in multiple ways for the bot, Realms, and more throughout the years.</p>
-      <p>On the Realm I am part of the NPPP clan, owned by Puggo. I also own a public villager trading hall on my plot you can come visit at any times. I'm currently working on a secret project with Meta that will be made public once complete!</p>
+      <p>On the Realm I am part of the NPPP clan, owned by Puggo. I also own a public villager trading hall on my plot you can visit at any time. I'm currently working on a secret project with Meta that will be made public once complete!</p>
     </div>
 
     <div class="profile-card" id="important-info">

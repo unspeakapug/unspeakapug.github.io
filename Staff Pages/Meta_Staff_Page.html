@@ -149,11 +149,31 @@ a:hover { text-decoration: underline; }
   color: #fff;
 }
 
-@media (max-width: 900px) {
+/* MOBILE STUFF */
+@media (max-width: 768px) {
+
   .main-content {
     flex-direction: column;
+    margin: 60px auto 40px;
   }
-  .sidebar { width: 100%; }
+
+  .sidebar { display: none; }
+
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
 }
 </style>
 </head>
@@ -184,14 +204,14 @@ a:hover { text-decoration: underline; }
       </div>
       <div>
         <h2>Meta</h2>
-        <div class="profile-rank">Co-Founder of and Manager of Puggy</div>
+        <div class="profile-rank">Co-Founder and Manager of Puggy</div>
       </div>
     </div>
 
     <div class="profile-card" id="bio">
       <h3>Bio</h3>
-      <p>I'm Meta. I got ownership of the Puggy Realm back in June 2024 after Puggo quit but like 5 months after we switched places again now Im management. I co-founded the project alongside him and Gibish</p>
-      <p>I'm also a member of the NPPP on the Puggy Realm</p>
+      <p>I'm Meta. I got ownership of the Puggy Realm back in June 2024 after Puggo quit, but five months later we switched places again and now I'm management. I co-founded the project alongside him and Gibish.</p>
+      <p>I'm also a member of the NPPP on the Puggy Realm.</p>
     </div>
 
     <div class="profile-card" id="important-info">

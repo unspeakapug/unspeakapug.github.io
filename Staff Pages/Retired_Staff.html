@@ -8,15 +8,14 @@
 
   <style>
 :root {
-  --bg-color: #12121d;
-  --container-bg: rgba(255,255,255,0.05);
-  --panel-bg: rgba(255,255,255,0.08);
-  --panel-hover: rgba(99,102,241,0.12);
-  --text-color: #ffffff;
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --shadow: rgba(0,0,0,0.5);
   --muted-text: #b5bac1;
-  --accent: #6366f1;
-  --accent-soft: #4f46e5;
-  --border: rgba(99,102,241,0.3);
 }
 
 * {
@@ -25,9 +24,17 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent1);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .taskbar {
@@ -38,8 +45,23 @@ body {
   padding: 10px 0;
   display: flex;
   justify-content: center;
+  gap: 10px;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.taskbar a {
+  padding: 8px 16px;
+  background: #1c1d28;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--accent1);
+  transition: 0.3s;
+}
+
+.taskbar a:hover {
+  background: #2c2f33;
+  color: #fff;
 }
 
 .nav-links {
@@ -47,34 +69,19 @@ body {
   gap: 10px;
 }
 
-.taskbar a {
-  padding: 10px 15px;
-  background: var(--panel-bg);
-  color: var(--accent-soft);
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: 0.25s ease;
-}
-
-.taskbar a:hover, .taskbar button:hover {
-  background: #2c2f33;
-  color: #fff;
-}
-
 .container {
   max-width: 1250px;
   margin: 115px auto 70px;
   padding: 40px;
-  background: var(--container-bg);
+  background: var(--card);
   border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 40px var(--shadow);
 }
 
 h1 {
   text-align: center;
-  font-size: 2.7em;
-  color: var(--accent);
+  font-size: 2.7rem;
+  color: var(--accent1);
   margin-bottom: 12px;
 }
 
@@ -83,7 +90,7 @@ h1 {
   color: var(--muted-text);
   max-width: 900px;
   margin: 0 auto 50px;
-  font-size: 1.05em;
+  font-size: 1.05rem;
 }
 
 .staff-section {
@@ -92,17 +99,17 @@ h1 {
 
 .staff-section h2 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--accent-soft);
+  color: var(--accent2);
   margin-bottom: 6px;
 }
 
 .section-divider {
   width: 80px;
   height: 4px;
-  background: var(--accent);
+  background: var(--accent1);
   margin: 0 auto 22px;
   border-radius: 2px;
 }
@@ -112,7 +119,7 @@ h1 {
   color: var(--muted-text);
   max-width: 900px;
   margin: 0 auto 35px;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .staff-grid {
@@ -124,57 +131,93 @@ h1 {
 .staff-card {
   background: linear-gradient(
     180deg,
-    var(--panel-bg),
+    var(--card),
     rgba(99,102,241,0.05)
   );
-  border: 1px solid var(--accent);
+  border: 1px solid var(--accent1);
   border-radius: 14px;
   padding: 24px;
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .staff-card:hover {
   transform: translateY(-6px);
-  background-color: var(--panel-hover);
   box-shadow: 0 12px 25px rgba(99,102,241,0.45);
-  background: linear-gradient(
-    180deg,
-    var(--panel-hover),
-    rgba(99,102,241,0.08)
-  );
 }
 
 .staff-card h3 {
   margin: 0 0 10px;
-  font-size: 1.35em;
-  color: var(--accent);
+  font-size: 1.35rem;
+  color: var(--accent1);
 }
 
 .staff-card p {
   margin: 0;
-  font-size: 0.95em;
+  font-size: 0.95rem;
   color: var(--muted-text);
-  line-height: 1.5;
 }
 
-.staff-card a {
-  color: inherit;
-  text-decoration: none;
+@media (max-width: 768px) {
+
+  .taskbar {
+      flex-wrap: wrap;
+      justify-content: center;
+      position: static;
+      padding: 12px;
+      gap: 8px;
+    }
+
+    .nav-links {
+    display: flex;
+    flex-wrap: wrap; /* THIS fixes wrapping */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%; /* 2 links per row */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    min-width: 120px; /* optional: prevents links from shrinking too much */
+  }
+
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .staff-card {
+    padding: 16px;
+  }
+
+  .staff-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .staff-card p {
+    font-size: 0.85rem;
+  }
+
+  .container {
+    margin: 20px auto 70px;
+    padding: 20px;
+  }
 }
-</style>
+  </style>
 </head>
 
 <body>
 
   <div class="taskbar">
     <div class="nav-links">
-  <a href="../index.html">Home</a>
-  <a href="../General/Announcements.html">Announcements</a>
-  <a href="../General/Doog.html">The Doog</a>
-  <a href="../General/puggyrealm.html">Puggy Realm</a>
-  <a href="../General/Puggy.html">Puggy Bot</a>
-</div>
+      <a href="../index.html">Home</a>
+      <a href="../General/Announcements.html">Announcements</a>
+      <a href="../General/Doog.html">The Doog</a>
+      <a href="../General/puggyrealm.html">Puggy Realm</a>
+      <a href="../General/Puggy.html">Puggy Bot</a>
+    </div>
   </div>
 
   <div class="container">
@@ -258,7 +301,6 @@ h1 {
         </div>  
 
         <div class="staff-card"><a href="../Staff Pages/Spud-Cat_Staff_Page.html"><h3>Spud Cat</h3></a><p>Ex-Head Administrator. Staff in RK before the merge, retired during January of 2026.</p></div>
-
 
       </div>
     </section>

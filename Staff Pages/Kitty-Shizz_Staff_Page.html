@@ -149,11 +149,30 @@ a:hover { text-decoration: underline; }
   color: #fff;
 }
 
-@media (max-width: 900px) {
+/* MOBILE STUFF */
+@media (max-width: 768px) {
+
   .main-content {
     flex-direction: column;
+    margin: 60px auto 40px;
   }
-  .sidebar { width: 100%; }
+
+  .sidebar { display: none; }
+
+  .taskbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: static;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .taskbar a {
+    flex: 1 1 45%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
 }
 </style>
 </head>
@@ -190,20 +209,7 @@ a:hover { text-decoration: underline; }
 
     <div class="profile-card" id="bio">
       <h3>Bio</h3>
-      <p>♡∩_∩ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-        （„• ֊ •„)♡ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-         ━━∪∪━━━━ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-        𝕀 𝕄𝕒𝕜𝕖 𝕀𝕟𝕤𝕥𝕒𝕟𝕥 𝔹𝕦𝕚𝕝𝕕𝕤ㅤㅤㅤㅤㅤ 𝔽𝕠𝕣 𝕄𝕚𝕟𝕖𝕔𝕣𝕒𝕗𝕥⛏ ㅤㅤㅤㅤㅤㅤㅤ
-┠ www.dsc.gg/kittysnbt 👀ㅤㅤㅤㅤ
-┠ 800+ Builds: 🗜ㅤㅤㅤㅤㅤㅤㅤㅤ
-┗ 10000+ Members 💖ㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-𝕄𝕪 𝕋𝕚𝕜𝕋𝕠𝕜 𝔹𝕦𝕚𝕝𝕕𝕤 🎥ㅤㅤㅤㅤㅤ
-┠ TikTok/@kitty_shizz 🎫ㅤㅤㅤㅤㅤ
-┗ Come Check It Out if You Like!!☺
- ∧,,,∧ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-(  ̳• · • ̳)                                                    
-/    づ♡ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+      <p>♡∩_∩  （„• ֊ •„)♡ ━━∪∪━━━━ 𝕀 𝕄𝕒𝕜𝕖 𝕀𝕟𝕤𝕥𝕒𝕟𝕥 𝔹𝕦𝕚𝕝𝕕𝕤 𝔽𝕠𝕣 𝕄𝕚𝕟𝕖𝕔𝕣𝕒𝕗𝕥⛏ …</p>
     </div>
 
     <div class="profile-card" id="important-info">
