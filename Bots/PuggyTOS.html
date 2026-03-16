@@ -2,130 +2,51 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/x-icon" href="../Logo.png">
+<link rel="stylesheet" href="../style.css">
+<script src="../Scripts/Theme.js" defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puggy Bot Terms of Service</title>
-<style>
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --card: rgba(255,255,255,0.05);
-  --card-hover: rgba(99,102,241,0.1);
-  --shadow: rgba(0,0,0,0.5);
-  --highlight-red: #f87171;
-  --highlight-orange: #fb923c;
-}
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-a { color: var(--accent1); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.taskbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e1f29;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 12px var(--shadow);
-}
-
-.taskbar a {
-  padding: 8px 16px;
-  background: #1c1d28;
-  border-radius: 8px;
-  font-weight: bold;
-  color: var(--accent1);
-  transition: 0.3s;
-}
-.taskbar a:hover {
-  background: #2c2f33;
-  color: #fff;
-}
-
-.container {
-  max-width: 900px;
-  margin: 120px auto 50px;
-  padding: 30px;
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow);
-}
-
-h1 {
-  text-align: center;
-  color: var(--accent1);
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  border-bottom: 2px solid var(--accent1);
-  padding-bottom: 10px;
-}
-
-h2 {
-  color: var(--accent2);
-  margin-top: 25px;
-  font-size: 1.5rem;
-}
-
-p {
-  line-height: 1.7;
-  margin: 12px 0;
-}
-
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-ul li {
-  margin: 8px 0;
-}
-
-.highlight {
-  background: rgba(99,102,241,0.05);
-  border-left: 4px solid var(--accent2);
-  padding: 12px 15px;
-  border-radius: 6px;
-  margin: 20px 0;
-}
-
-.highlight-red {
-  background: rgba(248,113,113,0.1);
-  border-left: 4px solid var(--highlight-red);
-}
-
-.highlight-orange {
-  background: rgba(251,146,60,0.1);
-  border-left: 4px solid var(--highlight-orange);
-}
-
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.6);
-}
-</style>
-</head>
-<body>
+<body class="universal-taskbar page-puggy-legal">
 
 <div class="taskbar">
-  <a href="../index.html">Home</a>
-  <a href="../General/Announcements.html">Announcements</a>
-  <a href="../General/Doog.html">The Doog</a>
-  <a href="../General/puggyrealm.html">Puggy Realm</a>
-  <a href="../General/Puggy.html">Puggy Bot</a>
+  <a href="../index.html" class="brand-left">
+    <img src="../PuggyLogo.png" alt="Puggy Logo">
+    <span>Home</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="../General/Announcements.html">Announcements</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+  </div>
+
+  <a href="../General/RkRealm.html" class="brand-right">
+    <span>RK Realm</span>
+    <img src="../RKLogo.png" alt="RK Logo">
+  </a>
+
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -140,13 +61,13 @@ ul li {
 
   <h2>Data Collection (<a href="PuggyPrivacyPolicy.html">Privacy Policy</a>)</h2>
   <ul>
-    <li>The Bot may collect Discord usernames, IDs, and message/command interactions solely to provide functionality.</li>
+    <li>The Bot may collect Discord usernames, IDs, and message/command interactions solely to provide functionality. Upon using the Realm part of the bot as well, your Xbox data will be pulled. XUID, Gamertag, friends, and other information will be logged. To prevent this, change your Xbox account's privacy settings to make it private.</li>
     <li class="highlight-orange">By using the Bot, you consent to data collection as described in the Privacy Policy.</li>
   </ul>
 
   <h2>Prohibited Use</h2>
   <ul>
-    <li class="highlight-red">Do not attempt to exploit or manipulate the Bot, including hacking or altering its code.</li>
+    <li class="highlight-red">Do not attempt to exploit or manipulate the Bot.</li>
     <li>Do not use the Bot to distribute malicious content, including viruses or malware.</li>
     <li>Do not intentionally break the Bot during downtime or maintenance.</li>
   </ul>
@@ -182,7 +103,7 @@ ul li {
   </div>
 
   <div class="footer">
-    <p>© 2026 Puggy Bot. All rights reserved. | Last Updated: Jan 3, 2026</p>
+    <p>© 2026 Puggy Bot. All rights reserved. | Last Updated/Changed: Feb 28, 2026</p>
   </div>
 </div>
 

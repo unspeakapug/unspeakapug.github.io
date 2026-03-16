@@ -2,216 +2,54 @@
 <html lang="en">
 <head>
   <link rel="icon" type="image/x-icon" href="../Logo.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../scripts/Theme.js" defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Staff & Teams</title>
-
-  <style>
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --card: rgba(255,255,255,0.05);
-  --card-hover: rgba(99,102,241,0.1);
-  --shadow: rgba(0,0,0,0.5);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-a {
-  color: var(--accent1);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.taskbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e1f29;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 12px var(--shadow);
-}
-
-.taskbar a {
-  padding: 8px 16px;
-  background: #1c1d28;
-  border-radius: 8px;
-  font-weight: bold;
-  color: var(--accent1);
-  transition: 0.3s;
-}
-
-.taskbar a:hover {
-  background: #2c2f33;
-  color: #fff;
-}
-
-.container {
-  max-width: 1250px;
-  margin: 120px auto 70px;
-  padding: 40px;
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow);
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.7rem;
-  color: var(--accent1);
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  text-align: center;
-  color: #b5bac1;
-  max-width: 900px;
-  margin: 0 auto 10px;
-  font-size: 1.05rem;
-}
-
-.subtitle + .subtitle {
-  margin-bottom: 50px;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-.staff-section {
-  margin-bottom: 70px;
-}
-
-.staff-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent2);
-  margin-bottom: 6px;
-}
-
-.section-divider {
-  width: 80px;
-  height: 4px;
-  background: var(--accent1);
-  margin: 0 auto 22px;
-  border-radius: 2px;
-}
-
-.staff-desc {
-  text-align: center;
-  color: #b5bac1;
-  max-width: 850px;
-  margin: 0 auto 35px;
-  font-size: 1rem;
-}
-
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 26px;
-}
-
-.staff-card {
-  background: linear-gradient(
-    180deg,
-    var(--card),
-    rgba(99,102,241,0.05)
-  );
-  border: 1px solid var(--accent1);
-  border-radius: 14px;
-  padding: 24px;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.staff-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(99,102,241,0.45);
-}
-
-.staff-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.35rem;
-  color: var(--accent1);
-}
-
-.staff-card p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #b5bac1;
-}
-  </style>
-
-  <style>/*MOBILE STUFFS AGAIN*/
-  @media (max-width: 768px) {
-
-  .taskbar {
-      flex-wrap: wrap;
-      justify-content: center;
-      position: static;
-      padding: 12px;
-      gap: 8px;
-    }
-
-    .taskbar a {
-      flex: 1 1 45%;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.95rem;
-    }
-
-    .staff-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .staff-card {
-      padding: 16px;
-    }
-
-    .staff-card h3 {
-      font-size: 1.1rem;
-    }
-
-    .staff-card p {
-      font-size: 0.85rem;
-    }
-
-    .container {
-      margin: 20px auto 70px;
-    }
-  }
-</style>
+  </head>
 </head>
 
-<body>
+<body class="universal-taskbar page-staff-list">
 
-  <div class="taskbar">
-      <a href="../index.html">Home</a>
-      <a href="Announcements.html">Announcements</a>
-      <a href="Doog.html">The Doog</a>
-      <a href="puggyrealm.html">Puggy Realm</a>
-      <a href="Puggy.html">Puggy Bot</a>
+<div class="taskbar">
+  <a href="../index.html" class="brand-left">
+    <img src="../PuggyLogo.png" alt="Puggy Logo">
+    <span>Home</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="../General/Announcements.html">Announcements</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
   </div>
+
+  <a href="../General/RkRealm.html" class="brand-right">
+    <span>RK Realm</span>
+    <img src="../RKLogo.png" alt="RK Logo">
+  </a>
+
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
   <div class="container">
     <h1>Staff & Teams</h1>
@@ -256,17 +94,17 @@ h1 {
     </section>
 
     <section class="staff-section">
-      <h2>Builder Team</h2>
+      <h2>Builder/Helper Team</h2>
       <div class="section-divider"></div>
       <p class="staff-desc">
-        Responsible for building and design within the Realms.
+        Responsible for building and designing the Realms alongside assisting other staff and players with tasks.
       </p>
 
       <div class="staff-grid">
-        <div class="staff-card"><h3>Crispy Ginger</h3><p>Puggy Realm Builder</p></div>
         <div class="staff-card"><h3>Mitchell</h3><p>RK Realm Builder</p></div>
         <div class="staff-card"><h3>Shane</h3><p>RK Realm Builder</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Lrtlgamer_Staff_Page.html"><h3>Lrtlgamer / Snuggo</h3></a><p>Assistant Builder</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Toast_Staff_Page.html"><h3>Toast!</h3></a><p>Sr. Helper & founder of Warfair Wonder.</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Lrtlgamer_Staff_Page.html"><h3>Lrtlgamer / Snuggo</h3></a><p>Sr. Helper and assistant.</p></div>
         <div class="staff-card"><h3>JumperLifeX</h3><p>Trial Builder</p></div>
       </div>
     </section>
@@ -279,12 +117,11 @@ h1 {
       </p>
 
       <div class="staff-grid">
-        <div class="staff-card"><h3>Shuit</h3><p>Administrator</p></div>
-        <div class="staff-card"><h3>Toast!</h3><p>Administrator. Founder of Warfair Wonder.</p></div>
+        <div class="staff-card"><h3>Blueren</h3><p>Former Management. Current Administrator.</p></div>
+        <div class="staff-card"><h3>Shuit</h3><p>Sr. Moderator</p></div>
         <div class="staff-card"><h3>TheAxKilla</h3><p>Senior Moderator (Puggy)</p></div>
         <div class="staff-card"><h3>Peachy Creep</h3><p>Senior Moderator (RK)</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Squiblerb_Staff_Page.html"><h3>Squiblerb</h3></a><p>Discord Moderator</p></div>
-        <div class="staff-card"><h3>Christian</h3><p>RK Realm & Discord Moderator</p></div>
+        <div class="staff-card"><a href="../Staff Pages/Squiblerb_Staff_Page.html"><h3>Squiblerb/Jellybean</h3></a><p>Discord Moderator</p></div>
       </div>
     </section>
   </div>

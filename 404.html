@@ -2,161 +2,36 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/x-icon" href="/Logo.png">
+<link rel="stylesheet" href="style.css">
+<script src="Scripts/Theme.js" defer></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 - Page Not Found</title>
-
-<style>
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --accentGlow: rgba(99,102,241,0.6);
-  --card: rgba(255,255,255,0.06);
-  --footer: #c7c7c7;
-}
-
-body.light {
-  --bg: #f5f7ff;
-  --text: #1f1f1f;
-  --accent1: #4169e1;
-  --accent2: #1e40af;
-  --accentGlow: rgba(65,105,225,0.4);
-  --card: rgba(255,255,255,0.85);
-  --footer: #555555;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Segoe UI", Arial, sans-serif;
-  transition: background 0.3s, color 0.3s;
-}
-
-a {
-  color: var(--accent1);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.hero {
-  margin-top: 25px;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  padding: 120px 20px 100px;
-  text-align: center;
-  color: white;
-  border-bottom: 5px solid var(--accent2);
-  border-radius: 0 0 35px 35px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  margin: 0 0 10px;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  max-width: 680px;
-  margin: auto;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.card {
-  background: var(--card);
-  padding: 45px 35px;
-  border-radius: 18px;
-  backdrop-filter: blur(12px);
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  border: 2px solid var(--accent1);
-  max-width: 600px;
-}
-
-.card h2 {
-  font-size: 2.1rem;
-  color: var(--accent1);
-  margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 1.1rem;
-  margin-bottom: 28px;
-}
-
-.home-btn {
-  display: inline-block;
-  padding: 14px 30px;
-  background: var(--accent1);
-  color: white;
-  font-weight: bold;
-  border-radius: 14px;
-  box-shadow: 0 0 15px var(--accentGlow);
-  transition: 0.25s;
-}
-
-.home-btn:hover {
-  background: var(--accent2);
-  transform: scale(1.08);
-}
-
-.footer {
-  text-align: center;
-  padding: 25px;
-  font-size: 0.9rem;
-  color: var(--footer);
-  margin-top: 50px;
-}
-
-body.light .card {
-  color: black;
-}
-
-@media (max-width: 768px) {
-
-  .hero {
-    padding: 90px 16px 60px;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .hero p {
-    font-size: 1.05rem;
-  }
-
-  .card {
-    padding: 30px 22px;
-  }
-
-  .card h2 {
-    font-size: 1.6rem;
-  }
-
-  .card p {
-    font-size: 1rem;
-  }
-}
-</style>
 </head>
 
-<body>
+<body class="page-404 universal-taskbar">
+
+<div class="taskbar">
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <div class="hero">
   <h1>404 - Page Not Found</h1>

@@ -2,151 +2,52 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/x-icon" href="../Logo.png">
+<link rel="stylesheet" href="../style.css">
+<script src="../Scripts/Theme.js" defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puggy Bot Commands</title>
-
-<style>
-:root {
-  --bg: #12121d;
-  --container: rgba(255,255,255,0.05);
-  --card: rgba(255,255,255,0.06);
-  --card-hover: rgba(99,102,241,0.12);
-  --accent: #6366f1;
-  --accent2: #4f46e5;
-  --text: #ffffff;
-  --muted: #cfcfcf;
-  --shadow: rgba(0,0,0,0.5);
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-.taskbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e1f29;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 12px var(--shadow);
-}
-
-.taskbar a, .taskbar button {
-  padding: 8px 14px;
-  background: #1c1d28;
-  border-radius: 8px;
-  color: var(--accent);
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.25s;
-}
-
-.taskbar a:hover, .taskbar button:hover {
-  background: #2c2f33;
-  color: #fff;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 120px auto 50px;
-  padding: 30px;
-  background: var(--container);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow);
-}
-
-h1 {
-  text-align: center;
-  color: var(--accent);
-  font-size: 2.6rem;
-}
-
-.page-desc {
-  text-align: center;
-  margin-bottom: 40px;
-  color: var(--muted);
-}
-
-.command-section {
-  margin-bottom: 50px;
-}
-
-.command-section h2 {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent2);
-  padding-bottom: 6px;
-  margin-bottom: 25px;
-}
-
-.command-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-}
-
-.command-card {
-  background: var(--card);
-  border: 1px solid var(--accent);
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 4px 15px var(--shadow);
-  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.command-card:hover {
-  transform: translateY(-6px);
-  background-color: var(--card-hover);
-  box-shadow: 0 12px 25px rgba(99,102,241,0.45);
-}
-
-.command-card h3 {
-  margin-top: 0;
-  color: var(--accent);
-  font-size: 1.3rem;
-}
-
-.command-card p {
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.tag {
-  background: rgba(99,102,241,0.15);
-  border: 1px solid var(--accent);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  color: #e6e6ff;
-}
-
-
-</style>
 </head>
-<body>
+
+<body class="universal-taskbar page-commands">
 
 <div class="taskbar">
-  <a href="../index.html">Home</a>
-  <a href="../General/Announcements.html">Announcements</a>
-  <a href="../General/Doog.html">The Doog</a>
-  <a href="../General/puggyrealm.html">Puggy Realm</a>
-  <a href="../General/Puggy.html">Puggy Bot</a>
+  <a href="../index.html" class="brand-left">
+    <img src="../PuggyLogo.png" alt="Puggy Logo">
+    <span>Home</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="../General/Announcements.html">Announcements</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+  </div>
+
+  <a href="../General/RkRealm.html" class="brand-right">
+    <span>RK Realm</span>
+    <img src="../RKLogo.png" alt="RK Logo">
+  </a>
+
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -158,35 +59,45 @@ h1 {
     <div class="command-grid">
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/doog</h3>
         <p>Sends a random photo of the Doog.</p>
+        <div class="tags">
+          <span class="tag">1-5 Photos</span>
       </div>
+    </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/doogbomb</h3>
         <p>Sends a Doog photo to another user, with optional hints.</p>
         <div class="tags">
           <span class="tag">DM Required</span>
           <span class="tag">Hint Option</span>
+          <span class="tag">1-5 Photos</span>
         </div>
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/doogquote</h3>
         <p>Sends a quote said by the Doog.</p>
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/xtictactoe</h3>
         <p>Play Tic-Tac-Toe against the bot.</p>
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/xblackjack</h3>
         <p>Play Blackjack against the bot or another player.</p>
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/secret</h3>
         <p>Enter a code to view a secret put into the bot.</p>
       </div>
@@ -199,6 +110,7 @@ h1 {
     <div class="command-grid">
 
       <div class="command-card">
+        <div class="status"><span class="dot issues"></span></div>
         <h3>/buildings</h3>
         <p>Buy buildings that generate Pug Points over time.</p>
         <div class="tags">
@@ -209,12 +121,14 @@ h1 {
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot issues"></span></div>
         <h3>/boosts</h3>
         <p>Purchase upgrades to improve building efficiency.</p>
       </div>
 
       
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/scoreboard</h3>
         <p>View leaderboards for a variety of different stats.</p>
       </div>
@@ -227,16 +141,19 @@ h1 {
     <div class="command-grid">
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/botinfo</h3>
         <p>Displays a list of commands and more information about the bot.</p>
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/status</h3>
         <p>Shows which bot systems are online or offline.</p>
       </div>
 
       <div class="command-card">
+        <div class="status"><span class="dot online"></span></div>
         <h3>/terms</h3>
         <p>Sends a reminder of the Puggy Bot Terms of Service.</p>
       </div>

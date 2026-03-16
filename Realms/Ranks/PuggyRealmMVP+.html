@@ -2,150 +2,52 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/x-icon" href="../../Logo.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../Scripts/Theme.js" defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puggy Realm - MVP+ Rank Area</title>
-
-<style>
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --card: rgba(255,255,255,0.05);
-  --card-hover: rgba(99,102,241,0.1);
-  --shadow: rgba(0,0,0,0.5);
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-a { color: var(--accent1); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.taskbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e1f29;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 12px var(--shadow);
-}
-
-.taskbar a {
-  padding: 8px 16px;
-  background: #1c1d28;
-  border-radius: 8px;
-  font-weight: bold;
-  color: var(--accent1);
-  transition: 0.3s;
-}
-.taskbar a:hover {
-  background: #2c2f33;
-  color: #fff;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 120px auto 50px;
-  padding: 30px;
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow);
-}
-
-h1 {
-  text-align: center;
-  color: var(--accent1);
-  font-size: 2.6rem;
-  margin-bottom: 10px;
-}
-
-.page-desc {
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 35px;
-}
-
-.section-title {
-  color: var(--accent1);
-  font-size: 1.7rem;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.screenshot {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.screenshot img {
-  max-width: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--accent1);
-  box-shadow: 0 8px 25px var(--shadow);
-}
-
-.features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 30px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.features-list li {
-  background: var(--card);
-  padding: 18px;
-  border-radius: 12px;
-  border: 1px solid var(--accent1);
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px var(--shadow);
-}
-
-.features-list li:hover {
-  background: var(--card-hover);
-  border-color: var(--accent2);
-  transform: translateY(-4px);
-}
-
-.features-list li h3 {
-  color: var(--accent1);
-  margin-bottom: 8px;
-}
-
-.features-list li p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.obtain {
-  text-align: center;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-top: 20px;
-}
-</style>
 </head>
 
-<body>
+<body class="universal-taskbar page-rank">
 
 <div class="taskbar">
-  <a href="../../index.html">Home</a>
-  <a href="../../General/Announcements.html">Announcements</a>
-  <a href="../../General/Doog.html">The Doog</a>
-  <a href="../../General/puggyrealm.html">Puggy Realm</a>
-  <a href="../../General/Puggy.html">Puggy Bot</a>
+  <a href="../../index.html" class="brand-left">
+    <img src="../../PuggyLogo.png" alt="Puggy Logo">
+    <span>Home</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="../../General/Announcements.html">Announcements</a>
+    <a href="../../General/Doog.html">The Doog</a>
+    <a href="../../General/Puggy.html">Puggy Bot</a>
+    <a href="../../General/puggyrealm.html">Puggy Realm</a>
+  </div>
+
+  <a href="../../General/RkRealm.html" class="brand-right">
+    <span>RK Realm</span>
+    <img src="../../RKLogo.png" alt="RK Logo">
+  </a>
+
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="container">

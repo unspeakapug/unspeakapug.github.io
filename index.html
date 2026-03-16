@@ -2,302 +2,36 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/x-icon" href="/Logo.png">
+<link rel="stylesheet" href="style.css">
+<script src="Scripts/Theme.js" defer></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Puggy Wiki</title>
 
-<style>
-
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --accentGlow: rgba(99,102,241,0.6);
-  --card: rgba(255,255,255,0.06);
-  --footer: #c7c7c7;
-}
-
-body.light {
-  --bg: #f5f7ff;
-  --text: #1f1f1f;
-  --accent1: #4169e1;
-  --accent2: #1e40af;
-  --accentGlow: rgba(65,105,225,0.4);
-  --card: rgba(255,255,255,0.85);
-  --footer: #555555;
-}
-
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Segoe UI", Arial, sans-serif;
-  transition: background 0.3s, color 0.3s;
-}
-
-a { color: var(--accent1); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-
-.topbar {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  gap: 10px;
-  z-index: 20;
-}
-
-.topbar button {
-  background: var(--accent1);
-  border: none;
-  padding: 9px 14px;
-  border-radius: 50px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 10px var(--accentGlow);
-  transition: 0.25s;
-}
-
-.topbar button:hover {
-  transform: scale(1.07);
-  background: var(--accent2);
-}
-
-
-.header-logos {
-  position: absolute;
-  top: 140px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 60px;
-  pointer-events: none;
-}
-
-.header-logos img {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 12px var(--accentGlow));
-  transition: 0.3s;
-}
-
-.header-logos img:hover {
-  transform: scale(1.07) rotate(2deg);
-}
-
-
-.hero {
-  margin-top: 25px;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-  border-bottom: 5px solid var(--accent2);
-  border-radius: 0 0 35px 35px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  position: relative;
-}
-
-.hero h1 { font-size: 3rem; margin: 0 0 10px; letter-spacing: 1px; }
-.hero p { font-size: 1.25rem; max-width: 700px; margin: auto; }
-
-
-.container {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 20px;
-
-  display: grid;
-  gap: 25px;
-
-  grid-template-columns: repeat(3, auto);
-  justify-content: center;
-}
-
-.nav-button,
-.submenu .sub-button {
-  min-width: 250px;
-}
-
-.nav-button {
-  background: var(--card);
-  padding: 25px 20px;
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-  text-align: center;
-  font-size: 1.3rem;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: 0.25s;
-  border: 1px solid var(--accent1);
-  cursor: pointer;
-  position: relative;
-}
-
-.nav-submenu {
-  display: none;
-  margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.subbtn { border:2px solid var(--accent2);
-  background: var(--accent1);
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: 0.2s;
-  text-align: center;
-}
-
-.subbtn:hover {
-  background: var(--accent2);
-  transform: scale(1.05);
-}
-
-.nav-button:hover {
-  transform: translateY(-6px);
-  background: var(--accent1);
-}
-
-
-.about {
-  max-width: 950px;
-  margin: 40px auto;
-  background: var(--card);
-  padding: 45px 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  border: 2px solid var(--accent1);
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.about h2 { font-size: 2.3rem; color: var(--accent1); }
-.about p { font-size: 1.15rem; margin-top: 12px; }
-
-
-.footer {
-  text-align: center;
-  padding: 25px;
-  font-size: 0.9rem;
-  color: var(--footer);
-  margin-top: 50px;
-}
-  body.light .nav-button { color:black; }
-  body.light .subbtn { color:black; }
-</style>
-
-<style> /*MOBILE STUFF*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-
-  .topbar {
-    top: 10px;
-    right: 10px;
-    gap: 6px;
-  }
-
-  .topbar button {
-    padding: 7px 12px;
-    font-size: 0.85rem;
-  }
-
-  .hero {
-  padding: 90px 16px 60px;
-  text-align: center;
-  }
-
-  .hero > div {
-    top: 18px !important;
-  }
-
-  .hero > div:first-of-type {
-    left: 18px !important;
-  }
-
-  .hero > div:nth-of-type(2) {
-    right: 18px !important;
-  }
-
-  .hero img {
-    width: 64px !important;
-    height: 64px !important;
-    opacity: 0.9;
-  }
-
-  .hero h1 {
-    font-size: 1.75rem;
-    margin-top: 24px;
-    line-height: 1.2;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
-    margin: 35px auto;
-    padding: 0px;
-  }
-
-  .nav-button {
-    width: 100%;
-    min-width: unset;
-    font-size: 1.15rem;
-    padding: 10px;
-  }
-
-  .nav-button:hover {
-    transform: none;
-  }
-
-  .nav-submenu {
-    gap: 8px;
-  }
-
-  .subbtn {
-    font-size: 0.95rem;
-    padding: 10px;
-  }
-
-  .about {
-    margin: 30px 15px;
-    padding: 30px 20px;
-  }
-
-  .about h2 {
-    font-size: 1.7rem;
-  }
-
-  .about p {
-    font-size: 1rem;
-  }
-
-  .footer {
-    font-size: 0.8rem;
-    padding: 18px;
-  }
-}
-</style>
 </head>
 
-<body>
+<body class="page-index universal-taskbar">
 
-<div class="topbar">
-  <button id="lang">ES</button>
-  <button id="mode">🌙</button>
+<div class="taskbar">
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="hero">
@@ -317,8 +51,8 @@ a:hover { text-decoration: underline; }
 
   <div class="nav-button" id="discordBtn" data-k="discord">Discords
     <div class="nav-submenu" id="discordSub">
-      <a class="subbtn" href="https://discord.gg/GcrVCYmt4U">Puggy</a>
-      <a class="subbtn" href="https://discord.gg/KetANFq65s">RK</a>
+      <a class="subbtn" href="https://discord.gg/GcrVCYmt4U">Old Server</a>
+      <a class="subbtn" href="https://discord.gg/KetANFq65s">Puggy/RK</a>
     </div>
   </div>
 

@@ -1,179 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="../Logo.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puggy Realm - Private Smelters</title>
-    <style>
-
-        :root {
-        --bg: #12121d;
-        --text: #ffffff;
-        --accent1: #6366f1;
-        --accent2: #4f46e5;
-        --card: rgba(255,255,255,0.05);
-        --card-hover: rgba(99,102,241,0.1);
-        --shadow: rgba(0,0,0,0.5);
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            margin: 0;
-        }
-
-        .taskbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: #1e1f29;
-        padding: 10px 0;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        z-index: 1000;
-        box-shadow: 0 2px 12px var(--shadow);
-        }
-
-        .taskbar a {
-        padding: 8px 16px;
-        background: #1c1d28;
-        border-radius: 8px;
-        font-weight: bold;
-        color: var(--accent1);
-        transition: 0.3s;
-        }
-
-        .taskbar a:hover {
-        background: #2c2f33;
-        color: #fff;
-        }
-
-        .container {
-        max-width: 1000px;
-        margin: 120px auto 50px;
-        padding: 30px;
-        background: var(--card);
-        border-radius: 16px;
-        box-shadow: 0 10px 30px var(--shadow);
-        }
-
-        h1 {
-            color: #5865f2;
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            color: #7289da;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #5865f2;
-            padding-bottom: 5px;
-        }
-
-        .split {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .split-text {
-            flex: 1.2;
-        }
-
-        .split-image {
-            flex: 0.8;
-            text-align: center;
-        }
-
-        .split-image img {
-            max-width: 100%;
-            border-radius: 8px;
-            border: 2px solid #5865f2;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .list {
-        background: var(--card);
-        border: 1px solid var(--accent1);
-        padding: 18px;
-        border-radius: 12px;
-        margin-bottom: 15px;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px var(--shadow);
-        }
-
-        .list:hover {
-        background: var(--card-hover);
-        border-color: var(--accent2);
-        transform: translateY(-4px);
-        }
-
-        .list strong {
-        color: var(--accent1);
-        }
-
-        .list p {
-            margin: 5px 0 0;
-            font-size: 0.9em;
-        }
-    </style>
-
-    <style>
-    @media (max-width: 768px) {
-
-  .taskbar {
-    position: static;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 12px;
-  }
-
-  .taskbar a {
-    flex: 1 1 45%;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.95rem;
-  }
-
-  .container {
-    margin: 20px auto 40px;
-    padding: 20px;
-  }
-
-  .container {
-    padding-bottom: 140px;
-  }
-
-  .split {
-    flex-direction: column;
-  }
-
-  .split-image img {
-    max-width: 100%;
-  }
-
-}
-
-@media (max-width: 900px) {
-    .split {
-        flex-direction: column;
-    }
-}
-</style>
+<link rel="icon" type="image/x-icon" href="../Logo.png">
+<link rel="stylesheet" href="../style.css">
+<script src="../Scripts/Theme.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puggy Realm - Private Smelters</title>
 </head>
-<body>
+
+<body class="universal-taskbar page-puggy-realm-smelters">
 
 <div class="taskbar">
-    <a href="../index.html">Home</a>
+  <a href="../index.html" class="brand-left">
+    <img src="../PuggyLogo.png" alt="Puggy Logo">
+    <span>Home</span>
+  </a>
+
+  <div class="nav-links">
     <a href="../General/Announcements.html">Announcements</a>
     <a href="../General/Doog.html">The Doog</a>
-    <a href="../General/puggyrealm.html">Puggy Realm</a>
     <a href="../General/Puggy.html">Puggy Bot</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+  </div>
+
+  <a href="../General/RkRealm.html" class="brand-right">
+    <span>RK Realm</span>
+    <img src="../RKLogo.png" alt="RK Logo">
+  </a>
+
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="container">

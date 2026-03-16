@@ -2,152 +2,52 @@
 <html lang="en">
 <head>
 <link rel="icon" type="image/x-icon" href="../Logo.png">
+<link rel="stylesheet" href="../style.css">
+<script src="../Scripts/Theme.js" defer></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rules - Puggy Bot</title>
-<style>
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --card: rgba(255,255,255,0.05);
-  --card-hover: rgba(99,102,241,0.1);
-  --shadow: rgba(0,0,0,0.5);
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-a { color: var(--accent1); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.taskbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e1f29;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 12px var(--shadow);
-}
-.taskbar a {
-  padding: 8px 16px;
-  background: #1c1d28;
-  border-radius: 8px;
-  font-weight: bold;
-  color: var(--accent1);
-  transition: 0.3s;
-}
-.taskbar a:hover {
-  background: #2c2f33;
-  color: #fff;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 120px auto 50px;
-  padding: 30px;
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow);
-}
-
-h1 {
-  text-align: center;
-  color: var(--accent1);
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.section-title {
-  color: var(--accent1);
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.info-box {
-  background: rgba(99,102,241,0.05);
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border-left: 4px solid var(--accent2);
-}
-
-ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-li {
-  margin: 8px 0;
-  font-size: 1.1rem;
-}
-
-.rules-section {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.rules-box {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px var(--shadow);
-  transition: 0.3s;
-}
-.rules-box:hover {
-  background: var(--card-hover);
-}
-</style>
-
-<style>/*MOBILE STUFFS AGAIN*/
-@media (max-width: 768px) {
-
-.taskbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    position: static;
-    padding: 12px;
-    gap: 8px;
-  }
-
-  .taskbar a {
-    flex: 1 1 45%;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.95rem;
-  }
-
-  .container { 
-    margin: 20px auto 40px; 
-    padding: 20px; 
-  }
-
-  .container {
-    padding-bottom: 140px;
-  }
-}
-
-</style>
 </head>
-<body>
+
+<body class="universal-taskbar page-puggy-legal">
 
 <div class="taskbar">
-  <a href="../index.html">Home</a>
-  <a href="../General/Announcements.html">Announcements</a>
-  <a href="../General/Doog.html">The Doog</a>
-  <a href="../General/puggyrealm.html">Puggy Realm</a>
-  <a href="../General/Puggy.html">Puggy Bot</a>
+  <a href="../index.html" class="brand-left">
+    <img src="../PuggyLogo.png" alt="Puggy Logo">
+    <span>Home</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="../General/Announcements.html">Announcements</a>
+    <a href="../General/Doog.html">The Doog</a>
+    <a href="../General/Puggy.html">Puggy Bot</a>
+    <a href="../General/puggyrealm.html">Puggy Realm</a>
+  </div>
+
+  <a href="../General/RkRealm.html" class="brand-right">
+    <span>RK Realm</span>
+    <img src="../RKLogo.png" alt="RK Logo">
+  </a>
+
+  <div class="theme-control">
+    <button id="themeToggle">🎨</button>
+
+    <div class="theme-dropdown" id="themeDropdown">
+
+      <span class="theme-label">Accent Color</span>
+      <input type="color" id="accentPicker">
+
+      <span class="theme-label">Background Color</span>
+      <input type="color" id="bgPicker">
+
+      <span class="theme-label">Defaults</span>
+      <div class="theme-buttons">
+        <button id="lightMode">Light</button>
+        <button id="darkMode">Dark</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="container">
