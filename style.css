@@ -1,3 +1,61 @@
+:root {
+  --bg: #12121d;
+  --text: #ffffff;
+  --accent1: #6366f1;
+  --accent2: #4f46e5;
+  --accentGlow: rgba(99,102,241,0.6);
+  --card: rgba(255,255,255,0.05);
+  --card-hover: rgba(99,102,241,0.1);
+  --muted: #cfcfcf;
+  --shadow: rgba(0,0,0,0.5);
+  --footer: #c7c7c7;
+
+  /*Exclusive to the taskbar, duhh. literally called taskbar*/
+  --taskbar-bg: #1e1f29;
+  --taskbar-buttons: #1c1d28;
+
+  /*Exclusive to command pages only*/
+  --online: #4ade80;
+  --issues: #facc15;
+  --offline: #ef4444;
+  --beta: #60a5fa;
+
+  /*Exclusive to legal pages only*/
+  --highlight-red: #f87171;
+  --highlight-orange: #fb923c;
+
+  /*Exclusive to library page - library categories*/
+  --cat-tutorials: #10b981;
+  --cat-history: #f59e0b;
+  --cat-fantasy: #8b5cf6;
+  --cat-player: #f43f5e;
+  --cat-othergames: #3b82f6;
+  --cat-pugsjourney: #ec4899;
+
+  --new-badge: #ff5c5c;
+
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.light {
+  --bg: #f5f7ff;
+  --text: #1f1f1f;
+  --accent1: #4169e1;
+  --accent2: #1e40af;
+  --accentGlow: rgba(65,105,225,0.4);
+  --card: rgba(255,255,255,0.85);
+  --card-hover: rgba(65,105,225,0.1);
+  --muted: #555555;
+  --shadow: rgba(0,0,0,0.15);
+  --footer: #555555;
+
+  --taskbar-bg: #e8ecff;
+  --taskbar-buttons: #e7e9f7;
+}
+
 /* ------------------------------
    TASKBAR --- .universal-taskbar
    ------------------------------*/
@@ -103,7 +161,7 @@
   border-radius: 6px;
   border: none;
   background: var(--taskbar-buttons);
-  color: white;
+  color: var(--text);
   cursor: pointer;
 }
 
@@ -117,7 +175,7 @@
 
 .universal-taskbar .theme-label {
   font-size: 12px;
-  color: white;
+  color: var(--text);
   opacity: 0.8;
   margin-top: 4px;
 }
@@ -157,64 +215,6 @@
     display: flex;
     justify-content: center;
   }
-}
-
-:root {
-  --bg: #12121d;
-  --text: #ffffff;
-  --accent1: #6366f1;
-  --accent2: #4f46e5;
-  --accentGlow: rgba(99,102,241,0.6);
-  --card: rgba(255,255,255,0.05);
-  --card-hover: rgba(99,102,241,0.1);
-  --muted: #cfcfcf;
-  --shadow: rgba(0,0,0,0.5);
-  --footer: #c7c7c7;
-
-  /*Exclusive to the taskbar, duhh. literally called taskbar*/
-  --taskbar-bg: #1e1f29;
-  --taskbar-buttons: #1c1d28;
-
-  /*Exclusive to command pages only*/
-  --online: #4ade80;
-  --issues: #facc15;
-  --offline: #ef4444;
-  --beta: #60a5fa;
-
-  /*Exclusive to legal pages only*/
-  --highlight-red: #f87171;
-  --highlight-orange: #fb923c;
-
-  /*Exclusive to library page - library categories*/
-  --cat-tutorials: #10b981;
-  --cat-history: #f59e0b;
-  --cat-fantasy: #8b5cf6;
-  --cat-player: #f43f5e;
-  --cat-othergames: #3b82f6;
-  --cat-pugsjourney: #ec4899;
-
-  --new-badge: #ff5c5c;
-
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-.light {
-  --bg: #f5f7ff;
-  --text: #1f1f1f;
-  --accent1: #4169e1;
-  --accent2: #1e40af;
-  --accentGlow: rgba(65,105,225,0.4);
-  --card: rgba(255,255,255,0.85);
-  --card-hover: rgba(65,105,225,0.1);
-  --muted: #555555;
-  --shadow: rgba(0,0,0,0.15);
-  --footer: #555555;
-
-  --taskbar-bg: #e8ecff;
-  --taskbar-buttons: #e7e9f7;
 }
 
 /* --------------------------
