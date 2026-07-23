@@ -7,7 +7,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Staff & Teams</title>
-  </head>
 </head>
 
 <body class="universal-taskbar page-staff-list">
@@ -34,7 +33,6 @@
     <button id="themeToggle">⚙️</button>
 
     <div class="theme-dropdown" id="themeDropdown">
-
       <span class="theme-label">Accent Color</span>
       <input type="color" id="accentPicker">
 
@@ -46,75 +44,143 @@
         <button id="lightMode">Light</button>
         <button id="darkMode">Dark</button>
       </div>
-
     </div>
   </div>
 </div>
 
-  <div class="container">
-    <h1>Staff & Teams</h1>
-    <p class="subtitle">
-      Meet the RK and Puggy staff! Our dedicated team works hard to ensure the best experience for the community.
-    </p>
-    <p class="subtitle">
-      Note: This list only shows staff members in their highest role. Members may appear in other teams as well. For retired staff, visit the <a href="../Staff Pages/Retired_Staff.html" style="color: var(--accent); text-decoration: underline;">Retired Staff</a> page.
-    </p>
+<div class="container">
+  <h1>Staff & Teams</h1>
+  <p class="subtitle">
+    Meet the RK and Puggy staff! Our dedicated team works hard to ensure the best experience for the community.
+  </p>
+  <p class="subtitle">
+    Note: This list only shows staff members in their highest role. Members may appear in other teams as well.
+  </p>
 
-    <section class="staff-section">
-      <h2>Executive Council</h2>
-      <div class="section-divider"></div>
-      <p class="staff-desc">
-        The people managing overall operations and major decisions.
-      </p>
-
-      <div class="staff-grid">
-        <div class="staff-card"><a href="../Staff Pages/Puggo_Staff_Page.html"><h3>Puggo</h3></a><p>Founder of Puggy & Head of Development district</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Gibish_Staff_Page.html"><h3>Gibish</h3></a><p>General Management & Co-Founder</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Meta_Staff_Page.html"><h3>Meta</h3></a><p>General Management & Co-Founder</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Cat-Support_Staff_Page.html"><h3>Cat Support</h3></a><p>General Management</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Duck_Staff_Page.html"><h3>Duck</h3></a><p>Founder of RK</p></div>
-        <div class="staff-card"><h3>Blueren</h3><p>Head of Moderation District</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Corbs_Staff_Page.html"><h3>Corbs</h3></a><p>Head of Builder Team</p></div>     
-       </div>
-    </section>
-
-    <section class="staff-section">
-      <h2>Builder/Developer Team</h2>
-      <div class="section-divider"></div>
-      <p class="staff-desc">
-        Responsible for the building and developing of the Realms, bots, and more.
-      </p>
-
-      <div class="staff-grid">
-        <div class="staff-card"><h3>Mitchell</h3><p>RK Realm Builder</p></div>
-        <div class="staff-card"><h3>Shane</h3><p>RK Realm Builder</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Toast_Staff_Page.html"><h3>Toast!</h3></a><p>Sr. Helper & founder of Warfair Wonder.</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Lrtlgamer_Staff_Page.html"><h3>Lrtlgamer / Snuggo</h3></a><p>Sr. Helper and assistant.</p></div>
-        <div class="staff-card"><h3>JumperLifeX</h3><p>Trial Builder</p></div>
-        <div class="staff-card"><h3>Sealeopard</h3><p>RK Skyblock Addon Developer</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Kitty-Shizz_Staff_Page.html"><h3>Kitty Shizz</h3></a><p>Puggy Realm & Bot Developer</p></div>
-        <div class="staff-card"><h3>Neon</h3><p>RK Skyblock Developer</p></div>
-        <div class="staff-card"><h3>CorniestMetal</h3><p>RK Skyblock Addon Developer</p></div>
-        <div class="staff-card"><h3>Aveql</h3><p>Assistant Addon Developer</p></div>
-      </div>
-    </section>
-
-    <section class="staff-section">
-      <h2>Moderator Team</h2>
-      <div class="section-divider"></div>
-      <p class="staff-desc">
-        Responsible for moderation across Discord servers and Realms.
-      </p>
-
-      <div class="staff-grid">
-        <div class="staff-card"><h3>Shane</h3><p>Trial Mod</p></div>
-        <div class="staff-card"><h3>Mitchell</h3><p>Moderator (RK)</p></div>
-        <div class="staff-card"><h3>TheAxKilla</h3><p>Moderator (Puggy)</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Kitty-Shizz_Staff_Page.html"><h3>Kitty Shizz</h3></a><p>Senior Admin</p></div>
-        <div class="staff-card"><h3>Peachy Creep</h3><p>Senior Moderator (RK)</p></div>
-        <div class="staff-card"><a href="../Staff Pages/Squiblerb_Staff_Page.html"><h3>Squiblerb/Jellybean</h3></a><p>Discord Moderator</p></div>
-      </div>
-    </section>
+  <div class="retired-topbar">
+    <a href="../Staff Pages/Retired_Staff.html" class="back-link">View Retired Staff</a>
+    <div class="retired-stats">
+      <span><strong id="statTotal">0</strong> staff</span>
+      <span><strong id="statExec">0</strong> executive</span>
+    </div>
   </div>
+
+  <section class="staff-section">
+    <h2>Executive Council</h2>
+    <div class="section-divider"></div>
+    <p class="staff-desc">
+      The people managing overall operations and major decisions.
+    </p>
+
+    <div class="spotlight-grid">
+
+      <a class="spotlight-card" href="../Staff Pages/Puggo_Staff_Page.html">
+        <div class="spotlight-head">
+          <div class="spotlight-avatar">P</div>
+          <span class="spotlight-badge badge-profile">Profile →</span>
+        </div>
+        <h3>Puggo</h3>
+        <span class="spotlight-rank">Founder of Puggy</span>
+        <p>Founder of Puggy & Head of the Development district.</p>
+      </a>
+
+      <a class="spotlight-card" href="../Staff Pages/Duck_Staff_Page.html">
+        <div class="spotlight-head">
+          <div class="spotlight-avatar">D</div>
+          <span class="spotlight-badge badge-profile">Profile →</span>
+        </div>
+        <h3>Duck</h3>
+        <span class="spotlight-rank">Founder of RK</span>
+        <p>Founder of RK and its community before and after the merge.</p>
+      </a>
+
+      <a class="spotlight-card" href="../Staff Pages/Gibish_Staff_Page.html">
+        <div class="spotlight-head">
+          <div class="spotlight-avatar">G</div>
+          <span class="spotlight-badge badge-profile">Profile →</span>
+        </div>
+        <h3>Gibish</h3>
+        <span class="spotlight-rank">Co-Founder</span>
+        <p>General Management & Co-Founder.</p>
+      </a>
+
+      <a class="spotlight-card" href="../Staff Pages/Cat-Support_Staff_Page.html">
+        <div class="spotlight-head">
+          <div class="spotlight-avatar">CS</div>
+          <span class="spotlight-badge badge-profile">Profile →</span>
+        </div>
+        <h3>Cat Support</h3>
+        <span class="spotlight-rank">General Management</span>
+        <p>Handles general management across the community.</p>
+      </a>
+
+      <div class="spotlight-card">
+        <div class="spotlight-head">
+          <div class="spotlight-avatar">B</div>
+          <span class="spotlight-badge">Leadership</span>
+        </div>
+        <h3>Blueren</h3>
+        <span class="spotlight-rank">Head of Moderation District</span>
+        <p>Leads the moderation district across servers and Realms.</p>
+      </div>
+
+      <a class="spotlight-card" href="../Staff Pages/Corbs_Staff_Page.html">
+        <div class="spotlight-head">
+          <div class="spotlight-avatar">C</div>
+          <span class="spotlight-badge badge-profile">Profile →</span>
+        </div>
+        <h3>Corbs</h3>
+        <span class="spotlight-rank">Head of Builder Team</span>
+        <p>Leads the builder team and its projects.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="staff-section">
+    <h2>Builder/Developer Team</h2>
+    <div class="section-divider"></div>
+    <p class="staff-desc">
+      Responsible for the building and developing of the Realms, bots, and more.
+    </p>
+
+    <ul class="list">
+      <li data-rank="Trial Builder"><strong>JumperLifeX-</strong>Trial Builder.</li>
+      <li data-rank="Helper"><a href="../Staff Pages/Lrtlgamer_Staff_Page.html"><strong>Lrtlgamer/Snuggo-</strong></a>Helper and assistant.</li>
+      <li data-rank="Sr. Helper"><a href="../Staff Pages/Toast_Staff_Page.html"><strong>Toast-</strong></a> Sr. Helper & Affiliate representing Warfair Wonder.</li>
+      <li data-rank="Developer"><a href="../Staff Pages/Kitty-Shizz_Staff_Page.html"><strong>Kitty Shizz-</strong></a>Puggy Realm & Bot Developer.</li>
+      <li data-rank="Developer"><strong>Sealeopard-</strong>RK Skyblock Addon Developer.</li>
+      <li data-rank="Developer"><strong>Neon-</strong>RK Skyblock Developer.</li>
+      <li data-rank="Developer"><strong>CorniestMetal-</strong>RK Skyblock Addon Developer.</li>
+      <li data-rank="Developer"><strong>Aveql-</strong>Assistant Addon Developer.</li>
+    </ul>
+  </section>
+
+  <section class="staff-section">
+    <h2>Moderator Team</h2>
+    <div class="section-divider"></div>
+    <p class="staff-desc">
+      Responsible for moderation across Discord servers and Realms.
+    </p>
+
+    <ul class="list">
+      <li data-rank="Head Admin"><a href="../Staff Pages/Meta_Staff_Page.html"><strong>Meta-</strong></a>Affiliate for Puggy. Previous Co-Owner and executive.</li>
+      <li data-rank="Senior Admin"><a href="../Staff Pages/Kitty-Shizz_Staff_Page.html"><strong>Kitty Shizz-</strong></a>Senior Admin and Developer.</li>
+      <li data-rank="Admin"><a href="../Staff Pages/Squiblerb_Staff_Page.html"><strong>Beany/Bee-</strong></a>Discord Administrator.</li>
+      <li data-rank="Sr. Moderator"><strong>Peachy Creep-</strong>Senior Moderator (RK).</li>
+      <li data-rank="Moderator"><strong>Mitchell-</strong>Moderator (RK).</li>
+      <li data-rank="Moderator"><strong>TheAxKilla-</strong>Moderator (Puggy).</li>
+      <li data-rank="Moderator"><strong>AnotherChain-</strong>Moderator (Puggy).</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  const listCount = document.querySelectorAll('.list li').length;
+  const execCount = document.querySelectorAll('.spotlight-card').length;
+  document.getElementById('statTotal').textContent = listCount + execCount;
+  document.getElementById('statExec').textContent = execCount;
+</script>
+
 </body>
 </html>
